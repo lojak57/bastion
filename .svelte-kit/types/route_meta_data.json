@@ -1,0 +1,10 @@
+{
+	"/": [],
+	"/5280-site": [],
+	"/api/leads": [
+		"src/routes/api/leads/+server.ts"
+	],
+	"/contact": [],
+	"/solo-biz-helper": [],
+	"/thank-you": []
+}
