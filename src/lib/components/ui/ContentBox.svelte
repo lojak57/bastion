@@ -29,4 +29,3 @@
 <div class="transition-all duration-300 hover:shadow-xl {variantClasses[variant]} {sizeClasses[size]} {className}">
 	<slot />
 </div>
-</script>

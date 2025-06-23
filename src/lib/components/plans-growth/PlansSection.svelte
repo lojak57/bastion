@@ -9,6 +9,7 @@
 			price: '$750',
 			subtitle: 'Foundation Builder',
 			description: 'Perfect for establishing your digital foundation and getting consistent results.',
+			promo: '2 months FREE with $5280 website purchase',
 			features: [
 				'4 geo-researched blog posts',
 				'Quarterly strategy call',
@@ -30,6 +31,7 @@
 			price: '$1,800',
 			subtitle: 'Growth Accelerator',
 			description: 'Comprehensive marketing that scales your business and builds lasting relationships.',
+			promo: '2 months FREE with $5280 website purchase',
 			features: [
 				'Everything in Trailhead',
 				'Google/Meta ads management',
@@ -53,6 +55,8 @@
 			price: '$3,500',
 			subtitle: 'Market Leader',
 			description: 'Full-scale marketing operation that positions you as the authority in your space.',
+			promo: '$5280 Website included FREE + 2 months FREE',
+			specialOffer: true,
 			features: [
 				'Everything in Summit',
 				'Bi-weekly landing page tests',
@@ -106,12 +110,30 @@
 			</ContentBox>
 		</ContentBox>
 		
+		<!-- Special Offer Banner -->
+		<ContentBox variant="primary" size="lg" className="bg-gradient-to-r from-red-rocks-rust to-red-600 border-2 border-red-700 mb-8 text-center">
+			<div class="flex flex-col md:flex-row items-center justify-center gap-4">
+				<div class="bg-white/20 backdrop-blur-sm px-6 py-3 rounded-xl">
+					<p class="text-white font-bold text-xl md:text-2xl">LIMITED TIME OFFER</p>
+				</div>
+				<div class="text-white">
+					<p class="font-bold text-lg md:text-xl">Get 2 MONTHS FREE on ANY plan with $5280 website purchase!</p>
+					<p class="text-white/90 text-base mt-1">Peak Season members get the $5280 website included FREE!</p>
+				</div>
+			</div>
+		</ContentBox>
+		
 		<div class="grid md:grid-cols-3 gap-6 lg:gap-8 mb-12 md:mb-16">
 			{#each plans as plan}
-				<BaseCard class="p-6 lg:p-8 hover:shadow-2xl transition-all duration-500 group hover:-translate-y-3 hover:scale-105 relative {plan.popular ? 'border-2 border-aspen-gold-400 shadow-aspen-gold-400/20 transform scale-105' : 'border border-skyline-blue-200'} backdrop-blur-sm bg-white/95 hover:bg-white shadow-lg">
+				<BaseCard class="p-6 lg:p-8 hover:shadow-2xl transition-all duration-500 group hover:-translate-y-3 hover:scale-105 relative {plan.popular ? 'border-2 border-aspen-gold-400 shadow-aspen-gold-400/20 transform scale-105' : plan.specialOffer ? 'border-2 border-red-rocks-rust shadow-red-rocks-rust/20' : 'border border-skyline-blue-200'} backdrop-blur-sm bg-white/95 hover:bg-white shadow-lg">
 					{#if plan.popular}
 						<div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-aspen-gold-400 text-granite-gray-800 px-6 py-2 rounded-full text-sm font-bold">
 							Most Popular
+						</div>
+					{/if}
+					{#if plan.specialOffer}
+						<div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-red-rocks-rust text-white px-6 py-2 rounded-full text-sm font-bold animate-pulse">
+							$5280 Website FREE!
 						</div>
 					{/if}
 					
@@ -127,6 +149,14 @@
 						<ContentBox variant="primary" size="md">
 							<div class="text-4xl lg:text-5xl font-bold text-skyline-blue-800">{plan.price}</div>
 						</ContentBox>
+						
+						{#if plan.promo}
+							<ContentBox variant="accent" size="sm" className="{plan.specialOffer ? 'bg-gradient-to-r from-red-rocks-rust to-red-600 border-red-700' : ''}">
+								<p class="text-sm font-bold {plan.specialOffer ? 'text-white' : 'text-granite-gray-800'}">
+									{plan.promo}
+								</p>
+							</ContentBox>
+						{/if}
 						
 						<ContentBox variant="neutral" size="sm">
 							<p class="text-granite-gray-700 text-sm font-medium leading-relaxed">{plan.description}</p>

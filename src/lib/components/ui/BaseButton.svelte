@@ -42,7 +42,7 @@
     on:keydown
   >
     {#if loading}
-      <span class="loading-spinner" aria-hidden="true" />
+      <span class="loading-spinner" aria-hidden="true"></span>
     {/if}
     <span class="button-content" class:sr-only={loading}>
       <slot />
@@ -58,7 +58,7 @@
     on:keydown
   >
     {#if loading}
-      <span class="loading-spinner" aria-hidden="true" />
+      <span class="loading-spinner" aria-hidden="true"></span>
     {/if}
     <span class="button-content" class:sr-only={loading}>
       <slot />

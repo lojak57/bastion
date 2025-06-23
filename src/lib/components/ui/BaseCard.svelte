@@ -41,7 +41,7 @@
   >
     {#if loading}
       <div class="loading-overlay">
-        <div class="skeleton skeleton-card" />
+        <div class="skeleton skeleton-card"></div>
       </div>
     {:else}
       <slot />
@@ -56,7 +56,7 @@
   >
     {#if loading}
       <div class="loading-overlay">
-        <div class="skeleton skeleton-card" />
+        <div class="skeleton skeleton-card"></div>
       </div>
     {:else}
       <slot />
@@ -66,7 +66,7 @@
   <div class={cardClasses} style="--accent-color: {accent}">
     {#if loading}
       <div class="loading-overlay">
-        <div class="skeleton skeleton-card" />
+        <div class="skeleton skeleton-card"></div>
       </div>
     {:else}
       <slot />

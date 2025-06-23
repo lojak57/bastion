@@ -214,24 +214,38 @@
 					<!-- Revenue Stream -->
 					<div class="space-y-4">
 						<h4 class="text-aspen-gold-400 font-semibold">Revenue Attribution</h4>
-						<div class="space-y-2 text-sm font-mono">
-							<div class="flex justify-between">
-								<span class="text-granite-gray-300">Blog Post #47:</span>
-								<span class="text-green-400">$23,400</span>
-							</div>
-							<div class="flex justify-between">
-								<span class="text-granite-gray-300">LinkedIn Campaign:</span>
-								<span class="text-green-400">$18,900</span>
-							</div>
-							<div class="flex justify-between">
-								<span class="text-granite-gray-300">Email Sequence #3:</span>
-								<span class="text-green-400">$14,200</span>
-							</div>
-							<div class="pt-2 border-t border-granite-gray-700">
-								<div class="flex justify-between">
-									<span class="text-white font-semibold">Total This Month:</span>
-									<span class="text-aspen-gold-400 font-bold">$56,500</span>
+						
+						<!-- Bar Chart -->
+						<div class="space-y-2">
+							<div class="flex items-center space-x-3">
+								<span class="text-granite-gray-300 text-xs w-24">Blog Post #47</span>
+								<div class="flex-1 h-6 bg-granite-gray-800 rounded overflow-hidden">
+									<div class="h-full bg-gradient-to-r from-green-400 to-emerald-500" style="width: 85%"></div>
 								</div>
+								<span class="text-green-400 font-bold text-sm">$23.4K</span>
+							</div>
+							
+							<div class="flex items-center space-x-3">
+								<span class="text-granite-gray-300 text-xs w-24">LinkedIn Ads</span>
+								<div class="flex-1 h-6 bg-granite-gray-800 rounded overflow-hidden">
+									<div class="h-full bg-gradient-to-r from-blue-400 to-indigo-500" style="width: 68%"></div>
+								</div>
+								<span class="text-blue-400 font-bold text-sm">$18.9K</span>
+							</div>
+							
+							<div class="flex items-center space-x-3">
+								<span class="text-granite-gray-300 text-xs w-24">Email #3</span>
+								<div class="flex-1 h-6 bg-granite-gray-800 rounded overflow-hidden">
+									<div class="h-full bg-gradient-to-r from-purple-400 to-pink-500" style="width: 51%"></div>
+								</div>
+								<span class="text-purple-400 font-bold text-sm">$14.2K</span>
+							</div>
+						</div>
+						
+						<div class="pt-2 border-t border-granite-gray-700">
+							<div class="flex justify-between items-center">
+								<span class="text-white font-semibold">Monthly Total:</span>
+								<span class="text-aspen-gold-400 font-bold text-xl">$56.5K</span>
 							</div>
 						</div>
 					</div>
@@ -239,16 +253,37 @@
 					<!-- Customer Journey -->
 					<div class="space-y-4">
 						<h4 class="text-aspen-gold-400 font-semibold">Customer Journey</h4>
-						<div class="space-y-2 text-sm">
-							<div class="bg-granite-gray-800 p-3 rounded">
-								<div class="text-white font-medium">High-Value Path:</div>
-								<div class="text-granite-gray-300 text-xs">Homepage → About → Plans → Contact</div>
-								<div class="text-green-400 text-xs">Conversion: 34%</div>
+						
+						<!-- Journey Flow Chart -->
+						<div class="space-y-3">
+							<!-- High Value Path -->
+							<div class="bg-gradient-to-r from-emerald-900/50 to-emerald-800/50 p-3 rounded-lg border border-emerald-600/30">
+								<div class="flex items-center justify-between mb-2">
+									<span class="text-white font-medium text-sm">High-Value Path</span>
+									<span class="text-emerald-400 font-bold">34%</span>
+								</div>
+								<div class="flex items-center space-x-2 text-xs">
+									<span class="bg-emerald-600 px-2 py-1 rounded text-white">Home</span>
+									<span class="text-emerald-400">→</span>
+									<span class="bg-emerald-600 px-2 py-1 rounded text-white">About</span>
+									<span class="text-emerald-400">→</span>
+									<span class="bg-emerald-600 px-2 py-1 rounded text-white">Plans</span>
+									<span class="text-emerald-400">→</span>
+									<span class="bg-emerald-500 px-2 py-1 rounded text-white font-bold">💰</span>
+								</div>
 							</div>
-							<div class="bg-granite-gray-800 p-3 rounded">
-								<div class="text-white font-medium">Quick Convert:</div>
-								<div class="text-granite-gray-300 text-xs">5280-Site → Contact</div>
-								<div class="text-green-400 text-xs">Conversion: 67%</div>
+							
+							<!-- Quick Convert Path -->
+							<div class="bg-gradient-to-r from-purple-900/50 to-pink-900/50 p-3 rounded-lg border border-purple-600/30">
+								<div class="flex items-center justify-between mb-2">
+									<span class="text-white font-medium text-sm">Quick Convert</span>
+									<span class="text-pink-400 font-bold">67%</span>
+								</div>
+								<div class="flex items-center space-x-2 text-xs">
+									<span class="bg-purple-600 px-2 py-1 rounded text-white">5280</span>
+									<span class="text-pink-400">→</span>
+									<span class="bg-pink-600 px-2 py-1 rounded text-white font-bold">💰💰</span>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -256,21 +291,53 @@
 					<!-- Predictions -->
 					<div class="space-y-4">
 						<h4 class="text-aspen-gold-400 font-semibold">This Week's Predictions</h4>
+						
+						<!-- Circular Progress Chart -->
+						<div class="relative">
+							<svg class="w-32 h-32 mx-auto" viewBox="0 0 100 100">
+								<!-- Background circle -->
+								<circle cx="50" cy="50" r="40" fill="none" stroke="#374151" stroke-width="8"/>
+								<!-- Progress circles -->
+								<circle cx="50" cy="50" r="40" fill="none" stroke="#10b981" stroke-width="8" 
+									stroke-dasharray="251.2" stroke-dashoffset="62.8" 
+									transform="rotate(-90 50 50)"/>
+								<circle cx="50" cy="50" r="40" fill="none" stroke="#f59e0b" stroke-width="8" 
+									stroke-dasharray="251.2" stroke-dashoffset="138.16" 
+									transform="rotate(-90 50 50)" opacity="0.8"/>
+								<circle cx="50" cy="50" r="40" fill="none" stroke="#3b82f6" stroke-width="8" 
+									stroke-dasharray="251.2" stroke-dashoffset="188.4" 
+									transform="rotate(-90 50 50)" opacity="0.6"/>
+							</svg>
+							<div class="absolute inset-0 flex items-center justify-center">
+								<div class="text-center">
+									<div class="text-2xl font-bold text-aspen-gold-400">$28K</div>
+									<div class="text-xs text-granite-gray-400">Projected</div>
+								</div>
+							</div>
+						</div>
+						
+						<!-- Legend -->
 						<div class="space-y-2 text-sm">
-							<div class="flex items-center space-x-2">
-								<div class="w-2 h-2 bg-green-500 rounded-full"></div>
-								<span class="text-granite-gray-300">3 hot leads likely to close</span>
+							<div class="flex items-center justify-between">
+								<div class="flex items-center space-x-2">
+									<div class="w-3 h-3 bg-green-500 rounded-full"></div>
+									<span class="text-granite-gray-300">Hot leads</span>
+								</div>
+								<span class="text-green-400 font-bold">75%</span>
 							</div>
-							<div class="flex items-center space-x-2">
-								<div class="w-2 h-2 bg-yellow-500 rounded-full"></div>
-								<span class="text-granite-gray-300">Blog traffic spike expected Thu</span>
+							<div class="flex items-center justify-between">
+								<div class="flex items-center space-x-2">
+									<div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+									<span class="text-granite-gray-300">Traffic spike</span>
+								</div>
+								<span class="text-yellow-400 font-bold">45%</span>
 							</div>
-							<div class="flex items-center space-x-2">
-								<div class="w-2 h-2 bg-blue-500 rounded-full"></div>
-								<span class="text-granite-gray-300">Email campaign ready to send</span>
-							</div>
-							<div class="pt-2 border-t border-granite-gray-700">
-								<div class="text-aspen-gold-400 font-semibold">Projected Revenue: $28K</div>
+							<div class="flex items-center justify-between">
+								<div class="flex items-center space-x-2">
+									<div class="w-3 h-3 bg-blue-500 rounded-full"></div>
+									<span class="text-granite-gray-300">Email ready</span>
+								</div>
+								<span class="text-blue-400 font-bold">25%</span>
 							</div>
 						</div>
 					</div>
