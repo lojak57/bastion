@@ -22,21 +22,21 @@
 		<div class="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-aspen-gold-400/10 blur-3xl animate-pulse"></div>
 		<div class="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-skyline-blue-300/10 blur-3xl animate-pulse delay-1000"></div>
 		
-		<!-- Floating Logo Icons -->
+		<!-- Floating Logo Icons - Hidden on mobile for performance -->
 		<img 
 			src="/images/logo/weknowco-icon.svg" 
 			alt="" 
-			class="absolute top-20 right-20 w-24 h-24 opacity-20 animate-float-slow"
+			class="absolute top-20 right-20 w-16 h-16 md:w-24 md:h-24 opacity-20 animate-float-slow hidden sm:block"
 		/>
 		<img 
 			src="/images/logo/weknowco-icon.svg" 
 			alt="" 
-			class="absolute bottom-32 left-32 w-16 h-16 opacity-15 animate-float-delayed"
+			class="absolute bottom-32 left-32 w-12 h-12 md:w-16 md:h-16 opacity-15 animate-float-delayed hidden sm:block"
 		/>
 		<img 
 			src="/favicon.svg" 
 			alt="" 
-			class="absolute top-1/3 right-1/4 w-20 h-20 opacity-10 animate-float-reverse"
+			class="absolute top-1/3 right-1/4 w-16 h-16 md:w-20 md:h-20 opacity-10 animate-float-reverse hidden sm:block"
 		/>
 	</div>
 	
@@ -48,21 +48,21 @@
 			<span class="text-white font-semibold tracking-wide">COLORADO'S DIGITAL MARKETING PARTNER</span>
 		</div>
 		
-		<h1 class="font-display text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 fade-in drop-shadow-2xl">
+		<h1 class="font-display text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-bold text-white mb-6 fade-in drop-shadow-2xl leading-tight">
 			Turn Colorado Dreams Into 
 			<span class="text-aspen-gold-400">Mile-High</span> Brands
 		</h1>
 		
-		<p class="text-xl md:text-2xl lg:text-3xl text-white/95 mb-8 max-w-4xl mx-auto slide-up drop-shadow-lg font-medium">
+		<p class="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white/95 mb-8 max-w-4xl mx-auto slide-up drop-shadow-lg font-medium leading-relaxed">
 			$5,280 gets you a complete website that works. 
 			<br class="hidden md:block">
 			30 days. 7 pages. Zero fluff.
 		</p>
 		
-		<div class="flex flex-col sm:flex-row gap-6 justify-center items-center slide-up">
+		<div class="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center slide-up">
 			<a 
 				href="/contact"
-				class="group bg-aspen-gold-400 text-granite-gray-800 px-10 py-5 rounded-xl font-bold text-lg hover:bg-aspen-gold-500 transform hover:scale-105 hover:-translate-y-1 transition-all duration-300 shadow-2xl hover:shadow-aspen-gold-400/50 flex items-center"
+				class="group bg-aspen-gold-400 text-granite-gray-800 px-8 py-4 sm:px-10 sm:py-5 rounded-xl font-bold text-base sm:text-lg hover:bg-aspen-gold-500 transform hover:scale-105 hover:-translate-y-1 transition-all duration-300 shadow-2xl hover:shadow-aspen-gold-400/50 flex items-center justify-center w-full sm:w-auto"
 			>
 				Start Your Climb
 				<svg class="w-6 h-6 ml-3 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -72,7 +72,7 @@
 			
 			<a 
 				href="/5280-site"
-				class="group border-3 border-white text-white px-10 py-5 rounded-xl font-bold text-lg hover:bg-white hover:text-skyline-blue-700 transition-all duration-300 backdrop-blur-sm bg-white/10 flex items-center"
+				class="group border-3 border-white text-white px-8 py-4 sm:px-10 sm:py-5 rounded-xl font-bold text-base sm:text-lg hover:bg-white hover:text-skyline-blue-700 transition-all duration-300 backdrop-blur-sm bg-white/10 flex items-center justify-center w-full sm:w-auto"
 			>
 				See What's Included
 				<svg class="w-6 h-6 ml-3 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -81,8 +81,21 @@
 			</a>
 		</div>
 		
+		<!-- Why Us CTA -->
+		<div class="mt-8 text-center slide-up delay-500">
+			<a 
+				href="/about"
+				class="group inline-flex items-center text-white/90 hover:text-white text-base font-medium underline decoration-aspen-gold-400 decoration-2 underline-offset-4 hover:decoration-white transition-all duration-300"
+			>
+				Why us? Read our story here
+				<svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+				</svg>
+			</a>
+		</div>
+		
 		<!-- Solo Biz Helper Teaser -->
-		<div class="mt-12 max-w-2xl mx-auto text-center slide-up px-4">
+		<div class="mt-8 sm:mt-12 max-w-2xl mx-auto text-center slide-up px-4">
 			<div class="bg-red-rocks-rust/20 backdrop-blur-sm border border-red-rocks-rust/30 rounded-2xl p-4 sm:p-6">
 				<div class="flex items-center justify-center mb-3">
 					<img src="/favicon.svg" alt="" class="w-6 h-6 mr-2 opacity-80" />
@@ -90,8 +103,8 @@
 						Partnership Program
 					</span>
 				</div>
-				<h3 class="text-white font-bold text-xl mb-3">Looking for a Marketing Partner?</h3>
-				<p class="text-white/80 text-sm mb-4">
+				<h3 class="text-white font-bold text-lg sm:text-xl mb-3">Looking for a Marketing Partner?</h3>
+				<p class="text-white/80 text-sm sm:text-base mb-4">
 					Revenue-share, equity, and micro-retainer partnerships for qualified Colorado founders.
 				</p>
 				<a 

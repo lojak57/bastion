@@ -1,66 +1,58 @@
 <script lang="ts">
 	import { BaseCard, ContentBox } from '$lib/components/ui';
 	
-	// Real dashboard metrics that actually matter
-	const dashboardFeatures = [
+	// How we actually help businesses grow
+	const realValue = [
 		{
 			category: "Revenue Attribution",
-			insight: "Which channels actually drive paying customers",
-			example: "$47K revenue traced to 3 specific blog posts",
-			metric: "ROI: 1,247%",
+			how: "We track which content actually brings in paying customers",
+			method: "Tag every touchpoint, follow the customer journey from first click to signed contract",
+			result: "You know exactly where to invest your marketing budget",
 			boring: "Traffic sources",
 			real: "Revenue sources"
 		},
 		{
 			category: "Customer Journey Mapping", 
-			insight: "Exact touchpoints before conversion",
-			example: "87% of $5K+ clients read these 2 pages first",
-			metric: "Conversion: 23%",
+			how: "We map the exact path your best customers take before buying",
+			method: "Analyze behavior patterns, identify decision triggers, optimize high-value touchpoints",
+			result: "More prospects follow the path that leads to sales",
 			boring: "Page views",
 			real: "Buying signals"
 		},
 		{
-			category: "Predictive Lead Scoring",
-			insight: "Which leads become customers (before they buy)",
-			example: "LinkedIn + demo request = 67% close rate",
-			metric: "Accuracy: 91%",
+			category: "Lead Qualification",
+			how: "We help you focus on leads that actually close",
+			method: "Score based on real behavior, not demographics. Track engagement patterns that predict purchase intent",
+			result: "Your sales team spends time on deals they can actually win",
 			boring: "Lead count",
 			real: "Revenue probability"
 		},
 		{
-			category: "Competitive Intelligence",
-			insight: "What your competitors are doing (and missing)",
-			example: "Competitor X lost 40% traffic after site redesign",
-			metric: "Opportunity: $120K",
+			category: "Market Positioning",
+			how: "We find the gaps your competitors are missing",
+			method: "Monitor competitor content, identify unmet customer needs, position you where they're not",
+			result: "You become the obvious choice in your category",
 			boring: "Market share",
 			real: "Market gaps"
 		}
 	];
 	
-	const realMetrics = [
+	const realOutcomes = [
 		{
-			label: "Revenue Per Visitor",
-			value: "$47.32",
-			trend: "+234%",
-			context: "Not just traffic"
+			what: "Lead Generation",
+			how: "Content that actually converts strangers into prospects"
 		},
 		{
-			label: "Customer Acquisition Cost",
-			value: "$127",
-			trend: "-67%",
-			context: "Getting cheaper"
+			what: "Conversion Rate",
+			how: "Optimize the path from visitor to customer"
 		},
 		{
-			label: "Lifetime Value",
-			value: "$8,940",
-			trend: "+89%",
-			context: "Getting better"
+			what: "Customer Value",
+			how: "Attract customers who spend more and stay longer"
 		},
 		{
-			label: "Time to Revenue",
-			value: "14 days",
-			trend: "-56%",
-			context: "Getting faster"
+			what: "Sales Cycle",
+			how: "Remove friction so prospects buy faster"
 		}
 	];
 </script>
@@ -88,7 +80,7 @@
 	<div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
 		<!-- Header -->
 		<div class="max-w-4xl mx-auto">
-			<BaseCard class="p-8 md:p-12 text-center bg-white shadow-2xl border-2 border-granite-gray-200">
+			<BaseCard class="p-6 sm:p-8 md:p-12 text-center bg-white shadow-2xl border-2 border-granite-gray-200">
 				<div class="inline-flex items-center bg-granite-gray-100 px-4 py-2 rounded-full mb-6">
 					<svg class="w-5 h-5 mr-2 text-granite-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
@@ -97,89 +89,90 @@
 				</div>
 				<div class="mb-6">
 					<p class="text-granite-gray-600 text-lg italic mb-2">*sigh*</p>
-					<h2 class="font-display text-3xl md:text-5xl font-bold text-skyline-blue-700 mb-4">
+					<h2 class="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-skyline-blue-700 mb-4">
 						Yes...we do the fancy dashboard thing too
 					</h2>
 				</div>
-				<p class="text-lg md:text-xl text-granite-gray-700 mb-8 font-medium">
-					Look, everyone wants "analytics" and "dashboards." Fine. But while they're showing you pretty charts about page views, we're tracking what actually matters.
+				<p class="text-base sm:text-lg md:text-xl text-granite-gray-700 mb-6 sm:mb-8 font-medium">
+					Everyone talks about "big data" and "metrics." Here's what actually matters: growing your business. No fake statistics. No inflated numbers. Just real methods that get real results.
 				</p>
 				<div class="bg-aspen-gold-100 border-2 border-aspen-gold-400 p-6 rounded-xl shadow-lg">
 					<p class="text-aspen-gold-800 font-bold text-base">
-						Spoiler: It's not how many people visited your blog. It's how many became customers.
+						We don't just track numbers. We find what makes your customers buy, then do more of that.
 					</p>
 				</div>
 			</BaseCard>
 		</div>
 		
-		<!-- Real Metrics Grid -->
-		<div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-12 md:mb-16">
-			{#each realMetrics as metric}
+		<!-- What We Actually Improve -->
+		<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-8 sm:mb-12 md:mb-16">
+			{#each realOutcomes as outcome}
 				<BaseCard class="p-4 md:p-6 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-2 bg-white border-2 border-skyline-blue-200 hover:border-skyline-blue-400">
-					<div class="space-y-3">
+					<div class="space-y-4">
 						<ContentBox variant="primary" size="sm">
-							<div class="text-2xl md:text-3xl font-bold text-skyline-blue-700">{metric.value}</div>
+							<div class="text-lg md:text-xl font-bold text-skyline-blue-700">{outcome.what}</div>
 						</ContentBox>
 						
 						<ContentBox variant="neutral" size="sm">
-							<div class="text-sm font-bold text-granite-gray-800">{metric.label}</div>
-						</ContentBox>
-						
-						<ContentBox variant="accent" size="sm">
-							<div class="flex items-center justify-center space-x-2">
-								<span class="text-green-700 font-bold text-sm">{metric.trend}</span>
-								<svg class="w-4 h-4 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
-								</svg>
-							</div>
-						</ContentBox>
-						
-						<ContentBox variant="neutral" size="sm">
-							<p class="text-xs text-granite-gray-600 font-medium">{metric.context}</p>
+							<p class="text-sm text-granite-gray-700 font-medium leading-relaxed">{outcome.how}</p>
 						</ContentBox>
 					</div>
 				</BaseCard>
 			{/each}
 		</div>
 		
-		<!-- Dashboard Features -->
+		<!-- How We Actually Help -->
 		<div class="max-w-6xl mx-auto">
 			<BaseCard class="p-8 text-center bg-white shadow-xl border-2 border-skyline-blue-300 mb-12">
 				<h3 class="font-display text-2xl md:text-4xl font-bold text-skyline-blue-700 mb-6">
-					What we track (while others count clicks)
+					How we actually grow your business
 				</h3>
 				<p class="text-granite-gray-700 max-w-2xl mx-auto text-lg font-medium">
-					These aren't vanity metrics. Every data point connects directly to your bank account.
+					No fluff. No fake numbers. Just the real methods we use to get you more customers.
 				</p>
 			</BaseCard>
 			
 			<div class="grid lg:grid-cols-2 gap-6 lg:gap-8">
-				{#each dashboardFeatures as feature}
+				{#each realValue as value}
 					<BaseCard class="p-6 lg:p-8 hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-2 border-skyline-blue-200 hover:border-skyline-blue-400 group bg-white shadow-lg">
 						<div class="space-y-6">
-							<!-- Header -->
-							<div class="flex items-center justify-between mb-4">
-								<h4 class="font-bold text-xl md:text-2xl text-skyline-blue-700 group-hover:text-skyline-blue-800">
-									{feature.category}
+							<!-- Header with Visual Emphasis -->
+							<div class="mb-6">
+								<h4 class="font-bold text-2xl md:text-3xl text-skyline-blue-700 group-hover:text-skyline-blue-800 mb-4">
+									{value.category}
 								</h4>
-								<div class="text-right">
-									<div class="text-sm text-granite-gray-600 line-through font-medium">{feature.boring}</div>
-									<div class="text-sm font-bold text-aspen-gold-700">{feature.real}</div>
+								<div class="flex items-center justify-center space-x-4 mb-4">
+									<div class="text-center">
+										<div class="text-granite-gray-500 line-through text-lg font-medium">{value.boring}</div>
+										<div class="text-xs text-granite-gray-400">Old Way</div>
+									</div>
+									<div class="text-4xl text-aspen-gold-500">→</div>
+									<div class="text-center">
+										<div class="text-2xl font-bold text-aspen-gold-600 bg-aspen-gold-100 px-4 py-2 rounded-lg">
+											{value.real}
+										</div>
+										<div class="text-xs text-aspen-gold-700 font-medium">Our Way</div>
+									</div>
 								</div>
 							</div>
 							
-							<!-- Insight -->
-							<div class="mb-4">
-								<p class="text-granite-gray-800 font-bold mb-3 text-base">{feature.insight}</p>
-								<div class="bg-skyline-blue-100 border-2 border-skyline-blue-400 p-4 rounded-lg">
-									<p class="text-skyline-blue-800 text-sm font-bold">"{feature.example}"</p>
+							<!-- What We Do -->
+							<div class="mb-6">
+								<p class="text-granite-gray-800 font-bold mb-4 text-lg leading-relaxed">{value.how}</p>
+								<div class="bg-gradient-to-r from-skyline-blue-50 to-skyline-blue-100 border-l-4 border-skyline-blue-500 p-4 rounded-r-lg">
+									<p class="text-skyline-blue-900 font-medium text-base">{value.method}</p>
 								</div>
 							</div>
 							
-							<!-- Metric -->
-							<div class="flex items-center justify-between pt-4 border-t-2 border-granite-gray-300">
-								<span class="text-granite-gray-700 text-sm font-bold">Key Metric:</span>
-								<span class="text-green-700 font-bold text-lg">{feature.metric}</span>
+							<!-- Result with Visual Impact -->
+							<div class="bg-gradient-to-r from-green-50 to-emerald-50 border-2 border-green-300 p-6 rounded-xl">
+								<div class="flex items-center mb-2">
+									<svg class="w-6 h-6 text-green-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+									</svg>
+									<span class="text-green-800 font-bold text-lg">Result:</span>
+								</div>
+								<p class="text-green-900 font-bold text-xl leading-relaxed">{value.result}</p>
 							</div>
 						</div>
 					</BaseCard>
@@ -187,168 +180,158 @@
 			</div>
 		</div>
 		
-		<!-- Mock Dashboard Preview -->
-		<div class="mt-20 max-w-6xl mx-auto">
-			<BaseCard class="p-8 text-center bg-white shadow-xl border-2 border-granite-gray-300 mb-12">
-				<h3 class="font-display text-2xl md:text-3xl font-bold text-skyline-blue-700 mb-4">
-					Fine. Here's what the actual dashboard looks like.
-				</h3>
-				<p class="text-granite-gray-700 font-medium">
-					(It's not as pretty as those other agencies', but it actually works)
-				</p>
-			</BaseCard>
-			
-			<!-- Dashboard Mockup -->
-			<div class="bg-white p-4 rounded-2xl shadow-2xl border-2 border-granite-gray-200">
-				<BaseCard class="p-8 bg-granite-gray-900 border-2 border-skyline-blue-200/50 relative overflow-hidden">
-				<!-- Terminal-style header -->
-				<div class="flex items-center space-x-2 mb-6 pb-4 border-b border-granite-gray-700">
-					<div class="w-3 h-3 bg-red-500 rounded-full"></div>
-					<div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
-					<div class="w-3 h-3 bg-green-500 rounded-full"></div>
-					<span class="text-granite-gray-400 text-sm ml-4 font-mono">weknowco-analytics.dashboard</span>
-				</div>
-				
-				<!-- Dashboard content -->
-				<div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-white">
-					<!-- Revenue Stream -->
-					<div class="space-y-4">
-						<h4 class="text-aspen-gold-400 font-semibold">Revenue Attribution</h4>
-						
-						<!-- Bar Chart -->
-						<div class="space-y-2">
-							<div class="flex items-center space-x-3">
-								<span class="text-granite-gray-300 text-xs w-24">Blog Post #47</span>
-								<div class="flex-1 h-6 bg-granite-gray-800 rounded overflow-hidden">
-									<div class="h-full bg-gradient-to-r from-green-400 to-emerald-500" style="width: 85%"></div>
-								</div>
-								<span class="text-green-400 font-bold text-sm">$23.4K</span>
-							</div>
-							
-							<div class="flex items-center space-x-3">
-								<span class="text-granite-gray-300 text-xs w-24">LinkedIn Ads</span>
-								<div class="flex-1 h-6 bg-granite-gray-800 rounded overflow-hidden">
-									<div class="h-full bg-gradient-to-r from-blue-400 to-indigo-500" style="width: 68%"></div>
-								</div>
-								<span class="text-blue-400 font-bold text-sm">$18.9K</span>
-							</div>
-							
-							<div class="flex items-center space-x-3">
-								<span class="text-granite-gray-300 text-xs w-24">Email #3</span>
-								<div class="flex-1 h-6 bg-granite-gray-800 rounded overflow-hidden">
-									<div class="h-full bg-gradient-to-r from-purple-400 to-pink-500" style="width: 51%"></div>
-								</div>
-								<span class="text-purple-400 font-bold text-sm">$14.2K</span>
-							</div>
-						</div>
-						
-						<div class="pt-2 border-t border-granite-gray-700">
-							<div class="flex justify-between items-center">
-								<span class="text-white font-semibold">Monthly Total:</span>
-								<span class="text-aspen-gold-400 font-bold text-xl">$56.5K</span>
+		<!-- Beautiful Charts & Graphs -->
+		<div class="mt-8 sm:mt-12 md:mt-16 max-w-7xl mx-auto">
+			<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+				<!-- Revenue Attribution Chart -->
+				<BaseCard class="p-6 bg-white shadow-xl border-2 border-green-200 hover:border-green-400 transition-all duration-300 group">
+					<div class="text-center mb-4">
+						<h4 class="font-bold text-green-700 text-lg mb-2">Content Performance</h4>
+						<p class="text-sm text-granite-gray-600">Revenue by content type</p>
+					</div>
+					
+					<!-- Donut Chart -->
+					<div class="relative w-32 h-32 mx-auto mb-4">
+						<svg class="w-full h-full transform -rotate-90" viewBox="0 0 42 42">
+							<!-- Background circle -->
+							<circle cx="21" cy="21" r="15.915" fill="transparent" stroke="#e5e7eb" stroke-width="3"/>
+							<!-- How-to guides: 45% -->
+							<circle cx="21" cy="21" r="15.915" fill="transparent" stroke="#10b981" stroke-width="3" 
+								stroke-dasharray="45 55" stroke-dashoffset="0"/>
+							<!-- Case studies: 30% -->
+							<circle cx="21" cy="21" r="15.915" fill="transparent" stroke="#3b82f6" stroke-width="3" 
+								stroke-dasharray="30 70" stroke-dashoffset="-45"/>
+							<!-- About content: 25% -->
+							<circle cx="21" cy="21" r="15.915" fill="transparent" stroke="#8b5cf6" stroke-width="3" 
+								stroke-dasharray="25 75" stroke-dashoffset="-75"/>
+						</svg>
+						<div class="absolute inset-0 flex items-center justify-center">
+							<div class="text-center">
+								<div class="text-lg font-bold text-green-700">100%</div>
+								<div class="text-xs text-granite-gray-500">Tracked</div>
 							</div>
 						</div>
 					</div>
 					
-					<!-- Customer Journey -->
-					<div class="space-y-4">
-						<h4 class="text-aspen-gold-400 font-semibold">Customer Journey</h4>
-						
-						<!-- Journey Flow Chart -->
-						<div class="space-y-3">
-							<!-- High Value Path -->
-							<div class="bg-gradient-to-r from-emerald-900/50 to-emerald-800/50 p-3 rounded-lg border border-emerald-600/30">
-								<div class="flex items-center justify-between mb-2">
-									<span class="text-white font-medium text-sm">High-Value Path</span>
-									<span class="text-emerald-400 font-bold">34%</span>
-								</div>
-								<div class="flex items-center space-x-2 text-xs">
-									<span class="bg-emerald-600 px-2 py-1 rounded text-white">Home</span>
-									<span class="text-emerald-400">→</span>
-									<span class="bg-emerald-600 px-2 py-1 rounded text-white">About</span>
-									<span class="text-emerald-400">→</span>
-									<span class="bg-emerald-600 px-2 py-1 rounded text-white">Plans</span>
-									<span class="text-emerald-400">→</span>
-									<span class="bg-emerald-500 px-2 py-1 rounded text-white font-bold">💰</span>
-								</div>
-							</div>
-							
-							<!-- Quick Convert Path -->
-							<div class="bg-gradient-to-r from-purple-900/50 to-pink-900/50 p-3 rounded-lg border border-purple-600/30">
-								<div class="flex items-center justify-between mb-2">
-									<span class="text-white font-medium text-sm">Quick Convert</span>
-									<span class="text-pink-400 font-bold">67%</span>
-								</div>
-								<div class="flex items-center space-x-2 text-xs">
-									<span class="bg-purple-600 px-2 py-1 rounded text-white">5280</span>
-									<span class="text-pink-400">→</span>
-									<span class="bg-pink-600 px-2 py-1 rounded text-white font-bold">💰💰</span>
-								</div>
+					<!-- Legend -->
+					<div class="space-y-2 text-sm">
+						<div class="flex items-center">
+							<div class="w-3 h-3 bg-green-500 rounded mr-2"></div>
+							<span class="text-granite-gray-700">How-to Guides</span>
+						</div>
+						<div class="flex items-center">
+							<div class="w-3 h-3 bg-blue-500 rounded mr-2"></div>
+							<span class="text-granite-gray-700">Case Studies</span>
+						</div>
+						<div class="flex items-center">
+							<div class="w-3 h-3 bg-purple-500 rounded mr-2"></div>
+							<span class="text-granite-gray-700">About Content</span>
+						</div>
+					</div>
+				</BaseCard>
+
+				<!-- Customer Journey Flow -->
+				<BaseCard class="p-6 bg-white shadow-xl border-2 border-blue-200 hover:border-blue-400 transition-all duration-300 group">
+					<div class="text-center mb-4">
+						<h4 class="font-bold text-blue-700 text-lg mb-2">Customer Journey</h4>
+						<p class="text-sm text-granite-gray-600">Path to conversion</p>
+					</div>
+					
+					<!-- Funnel Chart -->
+					<div class="space-y-3">
+						<div class="bg-gradient-to-r from-blue-500 to-blue-600 text-white text-center py-3 rounded-lg text-sm font-medium">
+							Awareness
+						</div>
+						<div class="bg-gradient-to-r from-blue-400 to-blue-500 text-white text-center py-3 rounded-lg text-sm font-medium mx-2">
+							Interest
+						</div>
+						<div class="bg-gradient-to-r from-blue-300 to-blue-400 text-white text-center py-3 rounded-lg text-sm font-medium mx-4">
+							Consideration
+						</div>
+						<div class="bg-gradient-to-r from-green-400 to-green-500 text-white text-center py-3 rounded-lg text-sm font-medium mx-6">
+							Conversion
+						</div>
+					</div>
+					
+					<div class="mt-4 text-center">
+						<span class="text-green-600 font-bold text-lg">23%</span>
+						<p class="text-xs text-granite-gray-600">Conversion Rate</p>
+					</div>
+				</BaseCard>
+
+				<!-- Lead Quality Score -->
+				<BaseCard class="p-6 bg-white shadow-xl border-2 border-purple-200 hover:border-purple-400 transition-all duration-300 group">
+					<div class="text-center mb-4">
+						<h4 class="font-bold text-purple-700 text-lg mb-2">Lead Quality</h4>
+						<p class="text-sm text-granite-gray-600">Behavioral scoring</p>
+					</div>
+					
+					<!-- Gauge Chart -->
+					<div class="relative w-32 h-20 mx-auto mb-4">
+						<svg class="w-full h-full" viewBox="0 0 200 100">
+							<!-- Background arc -->
+							<path d="M 20 80 A 80 80 0 0 1 180 80" stroke="#e5e7eb" stroke-width="12" fill="none"/>
+							<!-- Score arc (75%) -->
+							<path d="M 20 80 A 80 80 0 0 1 140 25" stroke="#8b5cf6" stroke-width="12" fill="none" stroke-linecap="round"/>
+							<!-- Pointer -->
+							<circle cx="140" cy="25" r="6" fill="#8b5cf6"/>
+						</svg>
+						<div class="absolute bottom-0 left-1/2 transform -translate-x-1/2">
+							<div class="text-center">
+								<div class="text-xl font-bold text-purple-700">87</div>
+								<div class="text-xs text-granite-gray-500">Score</div>
 							</div>
 						</div>
 					</div>
 					
-					<!-- Predictions -->
-					<div class="space-y-4">
-						<h4 class="text-aspen-gold-400 font-semibold">This Week's Predictions</h4>
-						
-						<!-- Circular Progress Chart -->
-						<div class="relative">
-							<svg class="w-32 h-32 mx-auto" viewBox="0 0 100 100">
-								<!-- Background circle -->
-								<circle cx="50" cy="50" r="40" fill="none" stroke="#374151" stroke-width="8"/>
-								<!-- Progress circles -->
-								<circle cx="50" cy="50" r="40" fill="none" stroke="#10b981" stroke-width="8" 
-									stroke-dasharray="251.2" stroke-dashoffset="62.8" 
-									transform="rotate(-90 50 50)"/>
-								<circle cx="50" cy="50" r="40" fill="none" stroke="#f59e0b" stroke-width="8" 
-									stroke-dasharray="251.2" stroke-dashoffset="138.16" 
-									transform="rotate(-90 50 50)" opacity="0.8"/>
-								<circle cx="50" cy="50" r="40" fill="none" stroke="#3b82f6" stroke-width="8" 
-									stroke-dasharray="251.2" stroke-dashoffset="188.4" 
-									transform="rotate(-90 50 50)" opacity="0.6"/>
-							</svg>
-							<div class="absolute inset-0 flex items-center justify-center">
-								<div class="text-center">
-									<div class="text-2xl font-bold text-aspen-gold-400">$28K</div>
-									<div class="text-xs text-granite-gray-400">Projected</div>
-								</div>
-							</div>
+					<div class="space-y-1 text-sm">
+						<div class="flex justify-between">
+							<span class="text-granite-gray-600">High Intent</span>
+							<span class="text-purple-600 font-medium">76%</span>
 						</div>
-						
-						<!-- Legend -->
-						<div class="space-y-2 text-sm">
-							<div class="flex items-center justify-between">
-								<div class="flex items-center space-x-2">
-									<div class="w-3 h-3 bg-green-500 rounded-full"></div>
-									<span class="text-granite-gray-300">Hot leads</span>
-								</div>
-								<span class="text-green-400 font-bold">75%</span>
-							</div>
-							<div class="flex items-center justify-between">
-								<div class="flex items-center space-x-2">
-									<div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
-									<span class="text-granite-gray-300">Traffic spike</span>
-								</div>
-								<span class="text-yellow-400 font-bold">45%</span>
-							</div>
-							<div class="flex items-center justify-between">
-								<div class="flex items-center space-x-2">
-									<div class="w-3 h-3 bg-blue-500 rounded-full"></div>
-									<span class="text-granite-gray-300">Email ready</span>
-								</div>
-								<span class="text-blue-400 font-bold">25%</span>
-							</div>
+						<div class="flex justify-between">
+							<span class="text-granite-gray-600">Qualified</span>
+							<span class="text-green-600 font-medium">91%</span>
 						</div>
 					</div>
-				</div>
-				
-				<!-- Terminal cursor -->
-				<div class="mt-6 pt-4 border-t border-granite-gray-700">
-					<span class="text-granite-gray-400 font-mono text-sm">$ </span>
-					<span class="text-white font-mono text-sm">generating_real_results.exe</span>
-					<span class="text-aspen-gold-400 animate-pulse">|</span>
-				</div>
+				</BaseCard>
+
+				<!-- Market Position -->
+				<BaseCard class="p-6 bg-white shadow-xl border-2 border-orange-200 hover:border-orange-400 transition-all duration-300 group">
+					<div class="text-center mb-4">
+						<h4 class="font-bold text-orange-700 text-lg mb-2">Market Position</h4>
+						<p class="text-sm text-granite-gray-600">Competitive analysis</p>
+					</div>
+					
+					<!-- Bar Chart -->
+					<div class="space-y-3">
+						<div class="flex items-center">
+							<span class="text-xs text-granite-gray-600 w-12">You</span>
+							<div class="flex-1 bg-gray-200 rounded-full h-4 mx-2">
+								<div class="bg-gradient-to-r from-orange-400 to-orange-500 h-4 rounded-full" style="width: 85%"></div>
+							</div>
+							<span class="text-orange-600 font-bold text-sm">Leader</span>
+						</div>
+						<div class="flex items-center">
+							<span class="text-xs text-granite-gray-600 w-12">Comp A</span>
+							<div class="flex-1 bg-gray-200 rounded-full h-4 mx-2">
+								<div class="bg-gradient-to-r from-gray-400 to-gray-500 h-4 rounded-full" style="width: 60%"></div>
+							</div>
+							<span class="text-gray-600 font-bold text-sm">Behind</span>
+						</div>
+						<div class="flex items-center">
+							<span class="text-xs text-granite-gray-600 w-12">Comp B</span>
+							<div class="flex-1 bg-gray-200 rounded-full h-4 mx-2">
+								<div class="bg-gradient-to-r from-gray-400 to-gray-500 h-4 rounded-full" style="width: 45%"></div>
+							</div>
+							<span class="text-gray-600 font-bold text-sm">Behind</span>
+						</div>
+					</div>
+					
+					<div class="mt-4 text-center">
+						<span class="text-orange-600 font-bold">Market Leader</span>
+						<p class="text-xs text-granite-gray-600">In your category</p>
+					</div>
 				</BaseCard>
 			</div>
 		</div>

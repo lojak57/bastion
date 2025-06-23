@@ -10,11 +10,12 @@
 			description: 'Your digital presence takes shape',
 			outcomes: [
 				'Professional website attracting qualified leads',
-				'Local search visibility increases by 200%+',
+				'Local search visibility grows consistently',
 				'Brand recognition in your Colorado market',
 				'Clear messaging that converts visitors'
 			],
-			tools: ['Website Development', 'Local SEO', 'Brand Positioning', 'Content Strategy']
+			tools: ['Website Development', 'Local SEO', 'Brand Positioning', 'Content Strategy'],
+			chartData: { type: 'build', progress: 30 }
 		},
 		{
 			stage: '2',
@@ -23,11 +24,12 @@
 			description: 'Your audience grows and engages',
 			outcomes: [
 				'Consistent lead flow from multiple channels',
-				'Email list growing 50+ qualified contacts monthly',
+				'Email list grows with qualified contacts monthly',
 				'Social media following that drives business',
 				'Customer retention through strategic content'
 			],
-			tools: ['Paid Advertising', 'Email Marketing', 'Video Content', 'Social Strategy']
+			tools: ['Paid Advertising', 'Email Marketing', 'Video Content', 'Social Strategy'],
+			chartData: { type: 'expand', progress: 65 }
 		},
 		{
 			stage: '3',
@@ -40,7 +42,8 @@
 				'Automated systems handling routine growth',
 				'Premium pricing supported by brand strength'
 			],
-			tools: ['Automation Systems', 'Advanced Analytics', 'A/B Testing', 'Conversion Optimization']
+			tools: ['Automation Systems', 'Advanced Analytics', 'A/B Testing', 'Conversion Optimization'],
+			chartData: { type: 'optimize', progress: 90 }
 		}
 	];
 </script>
@@ -72,41 +75,41 @@
 	</div>
 	
 	<div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
-		<div class="text-center mb-12 md:mb-16">
+		<div class="text-center mb-8 sm:mb-12 md:mb-16">
 			<div class="inline-flex items-center bg-skyline-blue-100 px-4 py-2 rounded-full mb-6">
 				<svg class="w-5 h-5 mr-2 text-skyline-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
 				</svg>
 				<span class="text-skyline-blue-700 font-semibold text-sm uppercase tracking-wider">Journey</span>
 			</div>
-			<h2 class="font-display text-3xl md:text-5xl font-bold text-skyline-blue-700 mb-6">
+			<h2 class="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-skyline-blue-700 mb-4 sm:mb-6">
 				Your Growth Journey
 			</h2>
-			<p class="text-lg md:text-xl text-granite-gray-700 max-w-3xl mx-auto font-medium">
+			<p class="text-base sm:text-lg md:text-xl text-granite-gray-700 max-w-3xl mx-auto font-medium">
 				Every successful Colorado business follows the same path. Here's how we guide you through each stage.
 			</p>
 		</div>
 		
-		<div class="space-y-16">
+		<div class="space-y-8 sm:space-y-12 md:space-y-16">
 			{#each journeyStages as stage, index}
-				<BaseCard class="p-8 md:p-12 bg-white shadow-2xl border-2 border-skyline-blue-200 hover:shadow-3xl transition-all duration-500">
+				<BaseCard class="p-6 sm:p-8 md:p-12 bg-white shadow-2xl border-2 border-skyline-blue-200 hover:shadow-3xl transition-all duration-500">
 					<!-- Stage Number -->
-					<div class="flex items-center mb-8">
-						<div class="w-20 h-20 bg-gradient-to-br from-skyline-blue-700 to-aspen-gold-500 rounded-full flex items-center justify-center text-white font-bold text-2xl mr-6 shadow-lg border-4 border-white">
+					<div class="flex items-center mb-6 sm:mb-8">
+						<div class="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-skyline-blue-700 to-aspen-gold-500 rounded-full flex items-center justify-center text-white font-bold text-xl sm:text-2xl mr-4 sm:mr-6 shadow-lg border-4 border-white">
 							{stage.stage}
 						</div>
 						<div>
-							<h3 class="font-display text-2xl md:text-4xl font-bold text-skyline-blue-700">{stage.title}</h3>
-							<p class="text-granite-gray-600 font-bold text-lg">{stage.subtitle}</p>
+							<h3 class="font-display text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-skyline-blue-700">{stage.title}</h3>
+							<p class="text-granite-gray-600 font-bold text-base sm:text-lg">{stage.subtitle}</p>
 						</div>
 					</div>
 					
-					<div class="grid lg:grid-cols-2 gap-8 items-start">
+					<div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-start">
 						<!-- Left: Description & Tools -->
-						<div class="bg-skyline-blue-50 p-6 rounded-xl border-2 border-skyline-blue-300 shadow-lg">
-							<p class="text-lg text-granite-gray-800 mb-6 font-medium">{stage.description}</p>
+						<div class="bg-skyline-blue-50 p-4 sm:p-6 rounded-xl border-2 border-skyline-blue-300 shadow-lg">
+							<p class="text-base sm:text-lg text-granite-gray-800 mb-4 sm:mb-6 font-medium">{stage.description}</p>
 							
-							<h4 class="font-bold text-skyline-blue-700 mb-4 text-lg">What We Focus On:</h4>
+							<h4 class="font-bold text-skyline-blue-700 mb-3 sm:mb-4 text-base sm:text-lg">What We Focus On:</h4>
 							<div class="grid grid-cols-1 gap-3">
 								{#each stage.tools as tool}
 									<div class="bg-white px-4 py-3 rounded-lg text-sm font-bold text-skyline-blue-800 border border-skyline-blue-300 shadow-sm">
@@ -117,8 +120,8 @@
 						</div>
 						
 						<!-- Right: Outcomes -->
-						<div class="bg-aspen-gold-50 p-6 rounded-xl border-2 border-aspen-gold-400 shadow-lg">
-							<h4 class="font-bold text-skyline-blue-700 mb-6 flex items-center text-lg">
+						<div class="bg-aspen-gold-50 p-4 sm:p-6 rounded-xl border-2 border-aspen-gold-400 shadow-lg">
+							<h4 class="font-bold text-skyline-blue-700 mb-4 sm:mb-6 flex items-center text-base sm:text-lg">
 								<svg class="w-6 h-6 mr-3 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
 								</svg>
