@@ -21,6 +21,12 @@
       isActive: currentPath === "/",
     },
     {
+      id: "plans",
+      label: "Plans",
+      href: "/plans-growth",
+      isActive: currentPath === "/plans-growth",
+    },
+    {
       id: "services",
       label: "Services",
       href: "#",

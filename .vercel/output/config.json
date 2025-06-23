@@ -19,12 +19,20 @@
 			"dest": "/5280-site"
 		},
 		{
+			"src": "^/about/?(?:/__data.json)?$",
+			"dest": "/about"
+		},
+		{
 			"src": "^/api/leads/?(?:/__data.json)?$",
 			"dest": "/api/leads"
 		},
 		{
 			"src": "^/contact/?(?:/__data.json)?$",
 			"dest": "/contact"
+		},
+		{
+			"src": "^/plans-growth/?(?:/__data.json)?$",
+			"dest": "/plans-growth"
 		},
 		{
 			"src": "^/solo-biz-helper/?(?:/__data.json)?$",

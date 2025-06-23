@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+  <!-- Golden circle with mountain silhouette -->
+  <circle cx="40" cy="40" r="38" fill="#F7C436" stroke="#F7C436" stroke-width="2"/>
+  
+  <!-- Mountain silhouette -->
+  <path d="M40 15 L25 45 L30 35 L40 20 L50 35 L55 45 L40 15" 
+        fill="#1C4D72" opacity="0.9"/>
+  
+  <!-- 5280 text -->
+  <text x="50%" y="70%" text-anchor="middle" 
+        font-family="Inter, Arial, sans-serif"
+        font-size="16" fill="#1C4D72" font-weight="700">5280</text>
+</svg>

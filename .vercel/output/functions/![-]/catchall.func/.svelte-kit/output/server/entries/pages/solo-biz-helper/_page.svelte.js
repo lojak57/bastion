@@ -1,10 +1,85 @@
-import { U as copy_payload, V as assign_payload, C as pop, z as push, E as ensure_array_like, Q as head, I as escape_html, J as stringify, F as attr } from "../../../chunks/index.js";
-import { B as BaseCard } from "../../../chunks/TimelineItem.svelte_svelte_type_style_lang.js";
+import { C as push, P as fallback, U as copy_payload, V as assign_payload, Q as bind_props, E as pop, K as escape_html, G as ensure_array_like, S as head, M as stringify, I as attr } from "../../../chunks/index.js";
+/* empty css                                                         */
+import { B as BaseCard } from "../../../chunks/BaseCard.js";
 import "clsx";
-import { W as WizardContainer, a as WizardStep, L as LuxuryInput } from "../../../chunks/WizardStep.js";
+import { L as LuxuryInput, W as WizardContainer } from "../../../chunks/WizardContainer.js";
+function FounderInfoStep($$payload, $$props) {
+  push();
+  let formData = $$props["formData"];
+  let errors = fallback($$props["errors"], () => ({}), true);
+  let $$settled = true;
+  let $$inner_payload;
+  function $$render_inner($$payload2) {
+    $$payload2.out += `<div class="space-y-6"><div class="text-center mb-8"><h2 class="text-2xl font-bold text-skyline-blue-600 mb-2">Tell Us About Yourself</h2> <p class="text-granite-gray-600">Let's start with the basics about you as a founder</p></div> <div class="grid grid-cols-1 md:grid-cols-2 gap-6">`;
+    LuxuryInput($$payload2, {
+      type: "text",
+      placeholder: "First Name",
+      error: errors.firstName,
+      required: true,
+      get value() {
+        return formData.firstName;
+      },
+      set value($$value) {
+        formData.firstName = $$value;
+        $$settled = false;
+      }
+    });
+    $$payload2.out += `<!----> `;
+    LuxuryInput($$payload2, {
+      type: "text",
+      placeholder: "Last Name",
+      error: errors.lastName,
+      required: true,
+      get value() {
+        return formData.lastName;
+      },
+      set value($$value) {
+        formData.lastName = $$value;
+        $$settled = false;
+      }
+    });
+    $$payload2.out += `<!----></div> `;
+    LuxuryInput($$payload2, {
+      type: "email",
+      placeholder: "Email Address",
+      error: errors.email,
+      required: true,
+      get value() {
+        return formData.email;
+      },
+      set value($$value) {
+        formData.email = $$value;
+        $$settled = false;
+      }
+    });
+    $$payload2.out += `<!----> `;
+    LuxuryInput($$payload2, {
+      type: "tel",
+      placeholder: "Phone Number",
+      error: errors.phone,
+      required: true,
+      get value() {
+        return formData.phone;
+      },
+      set value($$value) {
+        formData.phone = $$value;
+        $$settled = false;
+      }
+    });
+    $$payload2.out += `<!----></div>`;
+  }
+  do {
+    $$settled = true;
+    $$inner_payload = copy_payload($$payload);
+    $$render_inner($$inner_payload);
+  } while (!$$settled);
+  assign_payload($$payload, $$inner_payload);
+  bind_props($$props, { formData, errors });
+  pop();
+}
 function PartnershipWizard($$payload, $$props) {
   push();
-  let canGoNext, canGoBack, isLastStep, stepConfig;
+  let canGoNext, isLastStep, currentConfig;
   let currentStep = 0;
   const totalSteps = 5;
   let loading = false;
@@ -16,10 +91,23 @@ function PartnershipWizard($$payload, $$props) {
     phone: "",
     // Step 2: Business Basics
     companyName: "",
+    companyWebsite: "",
+    industry: "",
+    foundedYear: "",
+    // Step 3: Business Details
+    currentRevenue: "",
+    revenueProjection: "",
+    teamSize: "",
+    fundingStatus: "",
+    // Step 4: Partnership Preferences
+    partnershipType: "",
+    marketingBudget: "",
+    timeframe: "",
     // Step 5: Vision & Details
     businessDescription: "",
     uniqueValue: "",
-    goals: ""
+    goals: "",
+    whyPartnership: ""
   };
   let errors = {};
   function validateStep(step) {
@@ -29,140 +117,89 @@ function PartnershipWizard($$payload, $$props) {
         if (!formData.firstName.trim()) errors.firstName = "First name is required";
         if (!formData.lastName.trim()) errors.lastName = "Last name is required";
         if (!formData.email.trim()) errors.email = "Email is required";
-        else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-          errors.email = "Please enter a valid email address";
-        }
+        if (!formData.phone.trim()) errors.phone = "Phone is required";
         break;
       case 1:
         if (!formData.companyName.trim()) errors.companyName = "Company name is required";
-        errors.industry = "Please select an industry";
-        errors.foundedYear = "Founded year is required";
+        if (!formData.industry) errors.industry = "Industry is required";
+        if (!formData.foundedYear) errors.foundedYear = "Founded year is required";
         break;
       case 2:
-        errors.currentRevenue = "Please select current revenue range";
-        errors.teamSize = "Please select team size";
+        if (!formData.currentRevenue) errors.currentRevenue = "Current revenue is required";
+        if (!formData.teamSize) errors.teamSize = "Team size is required";
+        if (!formData.fundingStatus) errors.fundingStatus = "Funding status is required";
         break;
       case 3:
-        errors.partnershipType = "Please select partnership preference";
-        errors.timeframe = "Please select timeframe";
+        if (!formData.partnershipType) errors.partnershipType = "Partnership type is required";
+        if (!formData.marketingBudget) errors.marketingBudget = "Budget range is required";
+        if (!formData.timeframe) errors.timeframe = "Timeframe is required";
         break;
       case 4:
         if (!formData.businessDescription.trim()) errors.businessDescription = "Business description is required";
-        if (!formData.uniqueValue.trim()) errors.uniqueValue = "Please describe your unique value proposition";
-        if (!formData.goals.trim()) errors.goals = "Please describe your goals";
+        if (!formData.uniqueValue.trim()) errors.uniqueValue = "Unique value proposition is required";
+        if (!formData.goals.trim()) errors.goals = "Growth goals are required";
+        if (!formData.whyPartnership.trim()) errors.whyPartnership = "Please explain why you want a partnership";
         break;
     }
     return Object.keys(errors).length === 0;
   }
-  canGoNext = validateStep(currentStep);
-  canGoBack = currentStep > 0;
-  isLastStep = currentStep === totalSteps - 1;
-  stepConfig = [
+  const stepConfigs = [
     {
-      title: "Tell us about yourself",
-      subtitle: "Let's start with the founder details"
+      title: "Founder Information",
+      subtitle: "Let's start with the basics about you"
     },
     {
-      title: "Your business basics",
-      subtitle: "Help us understand your company"
+      title: "Business Overview",
+      subtitle: "Tell us about your company"
     },
     {
-      title: "Business metrics",
-      subtitle: "Share some key numbers with us"
+      title: "Business Performance",
+      subtitle: "Share your current traction and growth"
     },
     {
-      title: "Partnership preferences",
-      subtitle: "What type of partnership interests you?"
+      title: "Partnership Preferences",
+      subtitle: "How would you like to work together?"
     },
     {
-      title: "Your vision",
-      subtitle: "Tell us about your business and goals"
+      title: "Vision & Goals",
+      subtitle: "Help us understand your bigger picture"
     }
   ];
+  canGoNext = validateStep(currentStep);
+  isLastStep = currentStep === totalSteps - 1;
+  currentConfig = stepConfigs[currentStep];
   let $$settled = true;
   let $$inner_payload;
   function $$render_inner($$payload2) {
     WizardContainer($$payload2, {
       currentStep,
       totalSteps,
-      title: stepConfig[currentStep].title,
-      subtitle: stepConfig[currentStep].subtitle,
-      canGoBack,
+      title: currentConfig.title,
+      subtitle: currentConfig.subtitle,
+      canGoBack: currentStep > 0,
       canGoNext,
       isLastStep,
       loading,
       children: ($$payload3) => {
         {
           $$payload3.out += "<!--[-->";
-          WizardStep($$payload3, {
-            title: "Welcome to Solo Biz Helper",
-            description: "We're excited to learn about you and potentially partner together.",
-            icon: "M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z",
-            children: ($$payload4) => {
-              $$payload4.out += `<div class="form-grid svelte-1cl0d51">`;
-              LuxuryInput($$payload4, {
-                type: "text",
-                label: "First Name",
-                placeholder: "John",
-                required: true,
-                error: errors.firstName,
-                get value() {
-                  return formData.firstName;
-                },
-                set value($$value) {
-                  formData.firstName = $$value;
-                  $$settled = false;
-                }
-              });
-              $$payload4.out += `<!----> `;
-              LuxuryInput($$payload4, {
-                type: "text",
-                label: "Last Name",
-                placeholder: "Smith",
-                required: true,
-                error: errors.lastName,
-                get value() {
-                  return formData.lastName;
-                },
-                set value($$value) {
-                  formData.lastName = $$value;
-                  $$settled = false;
-                }
-              });
-              $$payload4.out += `<!----></div> `;
-              LuxuryInput($$payload4, {
-                type: "email",
-                label: "Email Address",
-                placeholder: "john@company.com",
-                required: true,
-                error: errors.email,
-                hint: "We'll use this for all partnership communications",
-                get value() {
-                  return formData.email;
-                },
-                set value($$value) {
-                  formData.email = $$value;
-                  $$settled = false;
-                }
-              });
-              $$payload4.out += `<!----> `;
-              LuxuryInput($$payload4, {
-                type: "tel",
-                label: "Phone Number",
-                placeholder: "(555) 123-4567",
-                hint: "For discovery calls and quick questions",
-                get value() {
-                  return formData.phone;
-                },
-                set value($$value) {
-                  formData.phone = $$value;
-                  $$settled = false;
-                }
-              });
-              $$payload4.out += `<!---->`;
+          FounderInfoStep($$payload3, {
+            errors,
+            get formData() {
+              return formData;
             },
-            $$slots: { default: true }
+            set formData($$value) {
+              formData = $$value;
+              $$settled = false;
+            }
           });
+        }
+        $$payload3.out += `<!--]--> `;
+        if (errors.submit) {
+          $$payload3.out += "<!--[-->";
+          $$payload3.out += `<div class="mt-6 p-4 bg-red-50 border border-red-200 rounded-lg"><p class="text-red-600 text-sm">${escape_html(errors.submit)}</p></div>`;
+        } else {
+          $$payload3.out += "<!--[!-->";
         }
         $$payload3.out += `<!--]-->`;
       },

@@ -1,4 +1,4 @@
-import { H as HYDRATION_ERROR, g as get_next_sibling, d as define_property, s as set_active_reaction, a as set_active_effect, i as is_array, b as active_effect, c as active_reaction, e as init_operations, f as get_first_child, h as HYDRATION_START, j as HYDRATION_END, k as hydration_failed, l as clear_text_content, m as array_from, n as component_root, o as create_text, p as branch, q as push, r as component_context, t as pop, u as set, L as LEGACY_PROPS, v as get, w as flushSync, x as mutable_source, y as render, z as push$1, A as setContext, C as pop$1 } from "./index.js";
+import { H as HYDRATION_ERROR, g as get_next_sibling, d as define_property, a as set_active_reaction, b as set_active_effect, i as is_array, c as active_effect, e as active_reaction, f as init_operations, h as get_first_child, j as HYDRATION_START, k as HYDRATION_END, l as hydration_failed, m as clear_text_content, o as array_from, p as component_root, q as create_text, r as branch, t as push, u as component_context, v as pop, w as set, L as LEGACY_PROPS, x as get, y as flushSync, z as mutable_source, A as render, C as push$1, D as setContext, E as pop$1 } from "./index.js";
 import "clsx";
 import "./shared-server.js";
 let base = "";
@@ -471,7 +471,7 @@ const options = {
   root,
   service_worker: false,
   templates: {
-    app: ({ head, body, assets: assets2, nonce, env }) => '<!doctype html>\n<html lang="en" class="h-full">\n	<head>\n		<meta charset="utf-8" />\n		<link rel="icon" href="' + assets2 + '/favicon.ico" />\n		<meta name="viewport" content="width=device-width, initial-scale=1" />\n		<link rel="preconnect" href="https://fonts.googleapis.com">\n		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">\n		<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">\n		<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">\n		' + head + '\n	</head>\n	<body data-sveltekit-preload-data="hover" class="h-full">\n		<div style="display: contents">' + body + "</div>\n	</body>\n</html>",
+    app: ({ head, body, assets: assets2, nonce, env }) => '<!doctype html>\n<html lang="en" class="h-full">\n	<head>\n		<meta charset="utf-8" />\n		<link rel="icon" href="' + assets2 + '/favicon.png" />\n		<link rel="apple-touch-icon" sizes="180x180" href="' + assets2 + '/images/logo/weknowco-icon.svg" />\n		<meta name="viewport" content="width=device-width, initial-scale=1" />\n		<link rel="preconnect" href="https://fonts.googleapis.com">\n		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">\n		<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">\n		<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">\n		' + head + '\n	</head>\n	<body data-sveltekit-preload-data="hover" class="h-full">\n		<div style="display: contents">' + body + "</div>\n	</body>\n</html>",
     error: ({ status, message }) => '<!doctype html>\n<html lang="en">\n	<head>\n		<meta charset="utf-8" />\n		<title>' + message + `</title>
 
 		<style>
@@ -543,7 +543,7 @@ const options = {
 		<div class="error">
 			<span class="status">` + status + '</span>\n			<div class="message">\n				<h1>' + message + "</h1>\n			</div>\n		</div>\n	</body>\n</html>\n"
   },
-  version_hash: "3e3i1e"
+  version_hash: "1n1hhys"
 };
 async function get_hooks() {
   let handle;

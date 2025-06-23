@@ -7,10 +7,10 @@ function __memo(fn) {
 return {
 	appDir: "_app",
 	appPath: "_app",
-	assets: new Set(["favicon.ico","images/5280-hero-bg.png","images/hero-mountains.png"]),
-	mimeTypes: {".png":"image/png"},
+	assets: new Set(["favicon.ico","favicon.png","favicon.svg","images/5280-hero-bg.png","images/hero-mountains.png","images/logo/weknowco-full-logo.png","images/logo/weknowco-icon.svg"]),
+	mimeTypes: {".png":"image/png",".svg":"image/svg+xml"},
 	_: {
-		client: {start:"_app/immutable/entry/start.DlY3c9qN.js",app:"_app/immutable/entry/app.ByrzLb1i.js",imports:["_app/immutable/entry/start.DlY3c9qN.js","_app/immutable/chunks/CDxg8SBf.js","_app/immutable/chunks/Css05BXU.js","_app/immutable/chunks/_257eR7t.js","_app/immutable/entry/app.ByrzLb1i.js","_app/immutable/chunks/Css05BXU.js","_app/immutable/chunks/scG1bs2O.js","_app/immutable/chunks/Eh6UUspi.js","_app/immutable/chunks/_257eR7t.js","_app/immutable/chunks/9uFmwV0r.js","_app/immutable/chunks/0rg3Sjrj.js"],stylesheets:[],fonts:[],uses_env_dynamic_public:false},
+		client: {start:"_app/immutable/entry/start.DdzwzjUN.js",app:"_app/immutable/entry/app.1UoXp4Gl.js",imports:["_app/immutable/entry/start.DdzwzjUN.js","_app/immutable/chunks/i6PB7SaW.js","_app/immutable/chunks/C63uuvp8.js","_app/immutable/chunks/DjEDCbSZ.js","_app/immutable/entry/app.1UoXp4Gl.js","_app/immutable/chunks/C63uuvp8.js","_app/immutable/chunks/Q8BvE5vV.js","_app/immutable/chunks/BSdB2KAb.js","_app/immutable/chunks/DjEDCbSZ.js","_app/immutable/chunks/DO8Tl_SB.js"],stylesheets:[],fonts:[],uses_env_dynamic_public:false},
 		nodes: [
 			__memo(() => import('./nodes/0.js')),
 			__memo(() => import('./nodes/1.js')),
@@ -18,7 +18,9 @@ return {
 			__memo(() => import('./nodes/3.js')),
 			__memo(() => import('./nodes/4.js')),
 			__memo(() => import('./nodes/5.js')),
-			__memo(() => import('./nodes/6.js'))
+			__memo(() => import('./nodes/6.js')),
+			__memo(() => import('./nodes/7.js')),
+			__memo(() => import('./nodes/8.js'))
 		],
 		routes: [
 			{
@@ -36,6 +38,13 @@ return {
 				endpoint: null
 			},
 			{
+				id: "/about",
+				pattern: /^\/about\/?$/,
+				params: [],
+				page: { layouts: [0,], errors: [1,], leaf: 4 },
+				endpoint: null
+			},
+			{
 				id: "/api/leads",
 				pattern: /^\/api\/leads\/?$/,
 				params: [],
@@ -46,21 +55,28 @@ return {
 				id: "/contact",
 				pattern: /^\/contact\/?$/,
 				params: [],
-				page: { layouts: [0,], errors: [1,], leaf: 4 },
+				page: { layouts: [0,], errors: [1,], leaf: 5 },
+				endpoint: null
+			},
+			{
+				id: "/plans-growth",
+				pattern: /^\/plans-growth\/?$/,
+				params: [],
+				page: { layouts: [0,], errors: [1,], leaf: 6 },
 				endpoint: null
 			},
 			{
 				id: "/solo-biz-helper",
 				pattern: /^\/solo-biz-helper\/?$/,
 				params: [],
-				page: { layouts: [0,], errors: [1,], leaf: 5 },
+				page: { layouts: [0,], errors: [1,], leaf: 7 },
 				endpoint: null
 			},
 			{
 				id: "/thank-you",
 				pattern: /^\/thank-you\/?$/,
 				params: [],
-				page: { layouts: [0,], errors: [1,], leaf: 6 },
+				page: { layouts: [0,], errors: [1,], leaf: 8 },
 				endpoint: null
 			}
 		],

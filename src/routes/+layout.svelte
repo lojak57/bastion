@@ -1,9 +1,12 @@
 <script lang="ts">
 	import '../app.css';
-	import { Navigation } from '$lib/components/layout';
+	import { Navigation, Footer } from '$lib/components/layout';
 </script>
 
-<div class="min-h-screen bg-snowfield-white">
+<div class="min-h-screen bg-snowfield-white flex flex-col">
 	<Navigation />
-	<slot />
+	<main class="flex-grow">
+		<slot />
+	</main>
+	<Footer />
 </div>

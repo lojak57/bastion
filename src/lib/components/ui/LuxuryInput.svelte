@@ -40,91 +40,19 @@
 	{/if}
 	
 	<div class="luxury-input-wrapper" class:focused class:error={error && touched} class:hasValue>
-		{#if type === 'text'}
-			<input
-				{type}
-				bind:value
-				{placeholder}
-				{required}
-				{disabled}
-				id={inputId}
-				class="luxury-input"
-				on:focus={handleFocus}
-				on:blur={handleBlur}
-				on:input
-				on:change
-			/>
-		{:else if type === 'email'}
-			<input
-				{type}
-				bind:value
-				{placeholder}
-				{required}
-				{disabled}
-				id={inputId}
-				class="luxury-input"
-				on:focus={handleFocus}
-				on:blur={handleBlur}
-				on:input
-				on:change
-			/>
-		{:else if type === 'tel'}
-			<input
-				{type}
-				bind:value
-				{placeholder}
-				{required}
-				{disabled}
-				id={inputId}
-				class="luxury-input"
-				on:focus={handleFocus}
-				on:blur={handleBlur}
-				on:input
-				on:change
-			/>
-		{:else if type === 'number'}
-			<input
-				{type}
-				bind:value
-				{placeholder}
-				{required}
-				{disabled}
-				id={inputId}
-				class="luxury-input"
-				on:focus={handleFocus}
-				on:blur={handleBlur}
-				on:input
-				on:change
-			/>
-		{:else if type === 'password'}
-			<input
-				{type}
-				bind:value
-				{placeholder}
-				{required}
-				{disabled}
-				id={inputId}
-				class="luxury-input"
-				on:focus={handleFocus}
-				on:blur={handleBlur}
-				on:input
-				on:change
-			/>
-		{:else}
-			<input
-				type="url"
-				bind:value
-				{placeholder}
-				{required}
-				{disabled}
-				id={inputId}
-				class="luxury-input"
-				on:focus={handleFocus}
-				on:blur={handleBlur}
-				on:input
-				on:change
-			/>
-		{/if}
+		<input
+			{type}
+			bind:value
+			{placeholder}
+			{required}
+			{disabled}
+			id={inputId}
+			class="luxury-input"
+			on:focus={handleFocus}
+			on:blur={handleBlur}
+			on:input
+			on:change
+		/>
 		
 		<!-- Focus border indicator -->
 		<div class="luxury-border"></div>

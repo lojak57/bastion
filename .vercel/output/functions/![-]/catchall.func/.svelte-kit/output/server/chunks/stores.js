@@ -1,18 +1,42 @@
-import { N as getContext } from "./index.js";
-import "./client.js";
+import { n as noop, T as getContext } from "./index.js";
+import "clsx";
+import "./exports.js";
+function get(key, parse = JSON.parse) {
+  try {
+    return parse(sessionStorage[key]);
+  } catch {
+  }
+}
+const SNAPSHOT_KEY = "sveltekit:snapshot";
+const SCROLL_KEY = "sveltekit:scroll";
+const is_legacy = noop.toString().includes("$$") || /function \w+\(\) \{\}/.test(noop.toString());
+if (is_legacy) {
+  ({
+    data: {},
+    form: null,
+    error: null,
+    params: {},
+    route: { id: null },
+    state: {},
+    status: -1,
+    url: new URL("https://example.com")
+  });
+}
+get(SCROLL_KEY) ?? {};
+get(SNAPSHOT_KEY) ?? {};
 const getStores = () => {
-  const stores$1 = getContext("__svelte__");
+  const stores = getContext("__svelte__");
   return {
     /** @type {typeof page} */
     page: {
-      subscribe: stores$1.page.subscribe
+      subscribe: stores.page.subscribe
     },
     /** @type {typeof navigating} */
     navigating: {
-      subscribe: stores$1.navigating.subscribe
+      subscribe: stores.navigating.subscribe
     },
     /** @type {typeof updated} */
-    updated: stores$1.updated
+    updated: stores.updated
   };
 };
 const page = {
