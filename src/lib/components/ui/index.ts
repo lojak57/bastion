@@ -12,6 +12,7 @@ export { default as BaseButton } from "./BaseButton.svelte";
 export { default as Button } from "./BaseButton.svelte"; // Alias for convenience
 export { default as BaseCard } from "./BaseCard.svelte";
 export { default as BrandedCard } from "./BrandedCard.svelte";
+export { default as ContentBox } from "./ContentBox.svelte";
 export { BaseInput } from "./inputs";
 export { default as LuxuryInput } from "./LuxuryInput.svelte";
 

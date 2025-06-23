@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { BaseCard } from '$lib/components/ui';
+	import { BaseCard, ContentBox } from '$lib/components/ui';
 	
 	// Real dashboard metrics that actually matter
 	const dashboardFeatures = [
@@ -117,15 +117,26 @@
 			{#each realMetrics as metric}
 				<BaseCard class="p-4 md:p-6 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-2 bg-white border-2 border-skyline-blue-200 hover:border-skyline-blue-400">
 					<div class="space-y-3">
-						<div class="text-2xl md:text-3xl font-bold text-skyline-blue-700">{metric.value}</div>
-						<div class="text-sm font-bold text-granite-gray-800">{metric.label}</div>
-						<div class="flex items-center justify-center space-x-2">
-							<span class="text-green-700 font-bold text-sm">{metric.trend}</span>
-							<svg class="w-4 h-4 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
-							</svg>
-						</div>
-						<p class="text-xs text-granite-gray-600 font-medium">{metric.context}</p>
+						<ContentBox variant="primary" size="sm">
+							<div class="text-2xl md:text-3xl font-bold text-skyline-blue-700">{metric.value}</div>
+						</ContentBox>
+						
+						<ContentBox variant="neutral" size="sm">
+							<div class="text-sm font-bold text-granite-gray-800">{metric.label}</div>
+						</ContentBox>
+						
+						<ContentBox variant="accent" size="sm">
+							<div class="flex items-center justify-center space-x-2">
+								<span class="text-green-700 font-bold text-sm">{metric.trend}</span>
+								<svg class="w-4 h-4 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+								</svg>
+							</div>
+						</ContentBox>
+						
+						<ContentBox variant="neutral" size="sm">
+							<p class="text-xs text-granite-gray-600 font-medium">{metric.context}</p>
+						</ContentBox>
 					</div>
 				</BaseCard>
 			{/each}

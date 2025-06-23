@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { BaseCard } from '$lib/components/ui';
+	import { BaseCard, ContentBox } from '$lib/components/ui';
 	import { PricingCard } from '$lib/components/marketing';
 	
 	// Plan data with journey context
@@ -83,20 +83,28 @@
 	</div>
 	
 	<div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
-		<div class="text-center mb-12 md:mb-16">
-			<div class="inline-flex items-center bg-skyline-blue-100 px-4 py-2 rounded-full mb-6">
-				<svg class="w-5 h-5 mr-2 text-skyline-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-				</svg>
-				<span class="text-skyline-blue-700 font-semibold text-sm uppercase tracking-wider">Our Plans</span>
-			</div>
-			<h2 class="font-display text-3xl md:text-5xl font-bold text-skyline-blue-700 mb-6">
-				Choose Your Altitude
-			</h2>
-			<p class="text-lg md:text-xl text-granite-gray-700 max-w-3xl mx-auto font-medium">
-				Each plan is designed for a specific stage of your growth journey. Start where you are, scale when you're ready.
-			</p>
-		</div>
+		<ContentBox variant="primary" size="lg" className="text-center mb-12 md:mb-16 max-w-4xl mx-auto">
+			<ContentBox variant="secondary" size="sm" className="inline-block mb-6">
+				<div class="flex items-center">
+					<svg class="w-5 h-5 mr-2 text-skyline-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+					</svg>
+					<span class="text-skyline-blue-700 font-semibold text-sm uppercase tracking-wider">Our Plans</span>
+				</div>
+			</ContentBox>
+			
+			<ContentBox variant="neutral" size="md" className="mb-6">
+				<h2 class="font-display text-3xl md:text-5xl font-bold text-skyline-blue-700">
+					Choose Your Altitude
+				</h2>
+			</ContentBox>
+			
+			<ContentBox variant="neutral" size="md">
+				<p class="text-lg md:text-xl text-granite-gray-700 font-medium">
+					Each plan is designed for a specific stage of your growth journey. Start where you are, scale when you're ready.
+				</p>
+			</ContentBox>
+		</ContentBox>
 		
 		<div class="grid md:grid-cols-3 gap-6 lg:gap-8 mb-12 md:mb-16">
 			{#each plans as plan}
@@ -107,11 +115,22 @@
 						</div>
 					{/if}
 					
-					<div class="text-center mb-6">
-						<h3 class="font-display text-2xl lg:text-3xl font-bold text-skyline-blue-700 mb-2">{plan.title}</h3>
-						<p class="text-granite-gray-700 font-semibold mb-3 text-base">{plan.subtitle}</p>
-						<div class="text-4xl lg:text-5xl font-bold text-skyline-blue-800 mb-3">{plan.price}</div>
-						<p class="text-granite-gray-700 text-sm font-medium leading-relaxed">{plan.description}</p>
+					<div class="text-center mb-6 space-y-3">
+						<ContentBox variant="neutral" size="sm">
+							<h3 class="font-display text-2xl lg:text-3xl font-bold text-skyline-blue-700">{plan.title}</h3>
+						</ContentBox>
+						
+						<ContentBox variant="secondary" size="sm">
+							<p class="text-granite-gray-700 font-semibold text-base">{plan.subtitle}</p>
+						</ContentBox>
+						
+						<ContentBox variant="primary" size="md">
+							<div class="text-4xl lg:text-5xl font-bold text-skyline-blue-800">{plan.price}</div>
+						</ContentBox>
+						
+						<ContentBox variant="neutral" size="sm">
+							<p class="text-granite-gray-700 text-sm font-medium leading-relaxed">{plan.description}</p>
+						</ContentBox>
 					</div>
 					
 					<div class="space-y-6">
@@ -146,31 +165,36 @@
 						</div>
 					</div>
 					
-					<div class="mt-6">
+					<ContentBox variant="primary" size="md" className="mt-6">
 						<a 
 							href={plan.ctaHref}
 							class="w-full bg-gradient-to-r from-skyline-blue-700 to-skyline-blue-800 text-white py-4 px-6 rounded-xl font-bold text-base hover:from-skyline-blue-800 hover:to-skyline-blue-900 transition-all duration-300 inline-block text-center transform hover:scale-105 shadow-xl hover:shadow-2xl"
 						>
 							{plan.ctaText}
 						</a>
-					</div>
+					</ContentBox>
 				</BaseCard>
 			{/each}
 		</div>
 		
-		<div class="text-center bg-white/80 backdrop-blur-sm p-8 rounded-2xl border border-skyline-blue-200 shadow-lg">
-			<p class="text-granite-gray-700 mb-6 text-lg font-medium">
-				Not sure which plan fits your business stage? Let's talk about your growth goals.
-			</p>
-			<a 
-				href="/contact" 
-				class="inline-flex items-center text-skyline-blue-700 hover:text-skyline-blue-800 font-bold text-lg group bg-skyline-blue-50 px-6 py-3 rounded-lg hover:bg-skyline-blue-100 transition-all"
-			>
-				Schedule a Strategy Call
-				<svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-				</svg>
-			</a>
-		</div>
+		<ContentBox variant="primary" size="lg" className="text-center max-w-3xl mx-auto">
+			<ContentBox variant="neutral" size="md" className="mb-6">
+				<p class="text-granite-gray-700 text-lg font-medium">
+					Not sure which plan fits your business stage? Let's talk about your growth goals.
+				</p>
+			</ContentBox>
+			
+			<ContentBox variant="secondary" size="md">
+				<a 
+					href="/contact" 
+					class="inline-flex items-center text-skyline-blue-700 hover:text-skyline-blue-800 font-bold text-lg group hover:bg-skyline-blue-100 px-6 py-3 rounded-lg transition-all"
+				>
+					Schedule a Strategy Call
+					<svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+					</svg>
+				</a>
+			</ContentBox>
+		</ContentBox>
 	</div>
 </section>
