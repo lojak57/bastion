@@ -87,27 +87,29 @@
 	
 	<div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
 		<!-- Header -->
-		<div class="text-center mb-12 md:mb-16">
-			<div class="inline-flex items-center bg-granite-gray-100 px-4 py-2 rounded-full mb-6">
-				<svg class="w-5 h-5 mr-2 text-granite-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
-				</svg>
-				<span class="text-granite-gray-700 font-semibold text-sm uppercase tracking-wider">Analytics</span>
-			</div>
-			<div class="mb-6">
-				<p class="text-granite-gray-600 text-lg italic mb-2">*sigh*</p>
-				<h2 class="font-display text-3xl md:text-5xl font-bold text-skyline-blue-700 mb-4">
-					Yes...we do the fancy dashboard thing too
-				</h2>
-			</div>
-			<p class="text-lg md:text-xl text-granite-gray-700 max-w-3xl mx-auto mb-8 font-medium">
-				Look, everyone wants "analytics" and "dashboards." Fine. But while they're showing you pretty charts about page views, we're tracking what actually matters.
-			</p>
-			<div class="bg-aspen-gold-100 border-2 border-aspen-gold-400 p-6 rounded-xl max-w-2xl mx-auto shadow-lg">
-				<p class="text-aspen-gold-800 font-bold text-base">
-					Spoiler: It's not how many people visited your blog. It's how many became customers.
+		<div class="max-w-4xl mx-auto">
+			<BaseCard class="p-8 md:p-12 text-center bg-white shadow-2xl border-2 border-granite-gray-200">
+				<div class="inline-flex items-center bg-granite-gray-100 px-4 py-2 rounded-full mb-6">
+					<svg class="w-5 h-5 mr-2 text-granite-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+					</svg>
+					<span class="text-granite-gray-700 font-semibold text-sm uppercase tracking-wider">Analytics</span>
+				</div>
+				<div class="mb-6">
+					<p class="text-granite-gray-600 text-lg italic mb-2">*sigh*</p>
+					<h2 class="font-display text-3xl md:text-5xl font-bold text-skyline-blue-700 mb-4">
+						Yes...we do the fancy dashboard thing too
+					</h2>
+				</div>
+				<p class="text-lg md:text-xl text-granite-gray-700 mb-8 font-medium">
+					Look, everyone wants "analytics" and "dashboards." Fine. But while they're showing you pretty charts about page views, we're tracking what actually matters.
 				</p>
-			</div>
+				<div class="bg-aspen-gold-100 border-2 border-aspen-gold-400 p-6 rounded-xl shadow-lg">
+					<p class="text-aspen-gold-800 font-bold text-base">
+						Spoiler: It's not how many people visited your blog. It's how many became customers.
+					</p>
+				</div>
+			</BaseCard>
 		</div>
 		
 		<!-- Real Metrics Grid -->
@@ -130,15 +132,15 @@
 		</div>
 		
 		<!-- Dashboard Features -->
-		<div class="space-y-12">
-			<div class="text-center mb-12 bg-white/60 backdrop-blur-sm p-8 rounded-2xl border border-skyline-blue-200">
+		<div class="max-w-6xl mx-auto">
+			<BaseCard class="p-8 text-center bg-white shadow-xl border-2 border-skyline-blue-300 mb-12">
 				<h3 class="font-display text-2xl md:text-4xl font-bold text-skyline-blue-700 mb-6">
 					What we track (while others count clicks)
 				</h3>
 				<p class="text-granite-gray-700 max-w-2xl mx-auto text-lg font-medium">
 					These aren't vanity metrics. Every data point connects directly to your bank account.
 				</p>
-			</div>
+			</BaseCard>
 			
 			<div class="grid lg:grid-cols-2 gap-6 lg:gap-8">
 				{#each dashboardFeatures as feature}
@@ -175,18 +177,19 @@
 		</div>
 		
 		<!-- Mock Dashboard Preview -->
-		<div class="mt-20">
-			<div class="text-center mb-12">
-				<h3 class="font-display text-2xl md:text-3xl font-bold text-skyline-blue-600 mb-4">
+		<div class="mt-20 max-w-6xl mx-auto">
+			<BaseCard class="p-8 text-center bg-white shadow-xl border-2 border-granite-gray-300 mb-12">
+				<h3 class="font-display text-2xl md:text-3xl font-bold text-skyline-blue-700 mb-4">
 					Fine. Here's what the actual dashboard looks like.
 				</h3>
-				<p class="text-granite-gray-600">
+				<p class="text-granite-gray-700 font-medium">
 					(It's not as pretty as those other agencies', but it actually works)
 				</p>
-			</div>
+			</BaseCard>
 			
 			<!-- Dashboard Mockup -->
-			<BaseCard class="p-8 bg-granite-gray-900 border-2 border-skyline-blue-200/50 relative overflow-hidden">
+			<div class="bg-white p-4 rounded-2xl shadow-2xl border-2 border-granite-gray-200">
+				<BaseCard class="p-8 bg-granite-gray-900 border-2 border-skyline-blue-200/50 relative overflow-hidden">
 				<!-- Terminal-style header -->
 				<div class="flex items-center space-x-2 mb-6 pb-4 border-b border-granite-gray-700">
 					<div class="w-3 h-3 bg-red-500 rounded-full"></div>
@@ -268,28 +271,29 @@
 					<span class="text-white font-mono text-sm">generating_real_results.exe</span>
 					<span class="text-aspen-gold-400 animate-pulse">|</span>
 				</div>
-			</BaseCard>
+				</BaseCard>
+			</div>
 		</div>
 		
 		<!-- CTA -->
-		<div class="text-center mt-16">
-			<div class="bg-gradient-to-r from-skyline-blue-50 to-aspen-gold-50 p-8 rounded-2xl border border-skyline-blue-200/50">
-				<h3 class="font-display text-2xl font-bold text-skyline-blue-600 mb-4">
+		<div class="max-w-4xl mx-auto mt-16">
+			<BaseCard class="p-8 md:p-12 text-center bg-gradient-to-r from-skyline-blue-50 to-aspen-gold-50 border-2 border-skyline-blue-300 shadow-xl">
+				<h3 class="font-display text-2xl md:text-3xl font-bold text-skyline-blue-700 mb-6">
 					Ready to see what your business actually looks like?
 				</h3>
-				<p class="text-granite-gray-600 mb-6 max-w-2xl mx-auto">
+				<p class="text-granite-gray-700 mb-8 max-w-2xl mx-auto text-lg font-medium">
 					Stop guessing what's working. Get dashboards that show you exactly where your money comes from and where to invest next.
 				</p>
 				<a 
 					href="/contact" 
-					class="inline-flex items-center bg-skyline-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-skyline-blue-700 transition-colors group"
+					class="inline-flex items-center bg-skyline-blue-700 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-skyline-blue-800 transition-colors group shadow-xl"
 				>
 					Show Me The Real Numbers
 					<svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
 					</svg>
 				</a>
-			</div>
+			</BaseCard>
 		</div>
 	</div>
 </section>

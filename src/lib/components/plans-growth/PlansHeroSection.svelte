@@ -37,9 +37,9 @@
 	<div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-24">
 		<div class="grid lg:grid-cols-2 gap-12 items-center">
 			<!-- Left Content -->
-			<div>
-				<div class="inline-flex items-center bg-aspen-gold-400/30 backdrop-blur-sm px-6 py-3 rounded-full mb-6 fade-in border border-aspen-gold-400/50">
-					<span class="text-aspen-gold-300 font-mono text-sm font-bold tracking-wider">GROWTH JOURNEY</span>
+			<div class="backdrop-blur-sm bg-white/10 p-8 rounded-2xl border border-white/20 shadow-2xl">
+				<div class="inline-flex items-center bg-aspen-gold-400/40 backdrop-blur-sm px-6 py-3 rounded-full mb-6 fade-in border border-aspen-gold-400/60">
+					<span class="text-aspen-gold-200 font-mono text-sm font-bold tracking-wider">GROWTH JOURNEY</span>
 				</div>
 				
 				<h1 class="font-display text-4xl md:text-6xl lg:text-7xl font-bold mb-6 fade-in drop-shadow-2xl leading-tight">

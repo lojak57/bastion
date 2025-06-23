@@ -89,7 +89,7 @@
 		
 		<div class="space-y-16">
 			{#each journeyStages as stage, index}
-				<div class="relative">
+				<BaseCard class="p-8 md:p-12 bg-white shadow-2xl border-2 border-skyline-blue-200 hover:shadow-3xl transition-all duration-500">
 					<!-- Stage Number -->
 					<div class="flex items-center mb-8">
 						<div class="w-20 h-20 bg-gradient-to-br from-skyline-blue-700 to-aspen-gold-500 rounded-full flex items-center justify-center text-white font-bold text-2xl mr-6 shadow-lg border-4 border-white">
@@ -101,15 +101,15 @@
 						</div>
 					</div>
 					
-					<div class="grid lg:grid-cols-2 gap-12 items-start">
+					<div class="grid lg:grid-cols-2 gap-8 items-start">
 						<!-- Left: Description & Tools -->
-						<div class="bg-white/80 backdrop-blur-sm p-6 rounded-2xl border border-skyline-blue-200 shadow-lg">
+						<div class="bg-skyline-blue-50 p-6 rounded-xl border-2 border-skyline-blue-300 shadow-lg">
 							<p class="text-lg text-granite-gray-800 mb-6 font-medium">{stage.description}</p>
 							
 							<h4 class="font-bold text-skyline-blue-700 mb-4 text-lg">What We Focus On:</h4>
-							<div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+							<div class="grid grid-cols-1 gap-3">
 								{#each stage.tools as tool}
-									<div class="bg-skyline-blue-100 px-4 py-3 rounded-lg text-sm font-bold text-skyline-blue-800 border border-skyline-blue-300">
+									<div class="bg-white px-4 py-3 rounded-lg text-sm font-bold text-skyline-blue-800 border border-skyline-blue-300 shadow-sm">
 										{tool}
 									</div>
 								{/each}
@@ -117,7 +117,7 @@
 						</div>
 						
 						<!-- Right: Outcomes -->
-						<BaseCard class="p-6 lg:p-8 hover:shadow-xl transition-all duration-500 hover:-translate-y-2 bg-white border-2 border-aspen-gold-300 shadow-lg">
+						<div class="bg-aspen-gold-50 p-6 rounded-xl border-2 border-aspen-gold-400 shadow-lg">
 							<h4 class="font-bold text-skyline-blue-700 mb-6 flex items-center text-lg">
 								<svg class="w-6 h-6 mr-3 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
@@ -134,16 +134,16 @@
 									</li>
 								{/each}
 							</ul>
-						</BaseCard>
-					</div>
-					
-					<!-- Progress Line -->
-					{#if index < journeyStages.length - 1}
-						<div class="flex justify-center my-12">
-							<div class="w-px h-16 bg-gradient-to-b from-skyline-blue-300 to-aspen-gold-300 animate-pulse"></div>
 						</div>
-					{/if}
-				</div>
+					</div>
+				</BaseCard>
+					
+				<!-- Progress Line -->
+				{#if index < journeyStages.length - 1}
+					<div class="flex justify-center my-12">
+						<div class="w-px h-16 bg-gradient-to-b from-skyline-blue-300 to-aspen-gold-300 animate-pulse"></div>
+					</div>
+				{/if}
 			{/each}
 		</div>
 	</div>
