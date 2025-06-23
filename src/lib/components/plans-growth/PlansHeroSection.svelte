@@ -27,34 +27,34 @@
 </script>
 
 <!-- Hero Section -->
-<section class="relative overflow-hidden bg-gradient-to-br from-skyline-blue-600 via-skyline-blue-700 to-granite-gray-800 text-white min-h-screen flex items-center">
+<section class="relative overflow-hidden bg-gradient-to-br from-skyline-blue-700 via-skyline-blue-800 to-granite-gray-900 text-white min-h-screen flex items-center">
 	<!-- Background Elements -->
 	<div class="absolute inset-0 z-10 overflow-hidden pointer-events-none">
 		<div class="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-aspen-gold-400/10 blur-3xl animate-pulse"></div>
 		<div class="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-skyline-blue-300/10 blur-3xl animate-pulse delay-1000"></div>
 	</div>
 	
-	<div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
+	<div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-24">
 		<div class="grid lg:grid-cols-2 gap-12 items-center">
 			<!-- Left Content -->
 			<div>
-				<div class="inline-flex items-center bg-aspen-gold-400/20 backdrop-blur-sm px-4 py-2 rounded-full mb-6 fade-in">
-					<span class="text-aspen-gold-400 font-mono text-sm font-semibold tracking-wider">GROWTH JOURNEY</span>
+				<div class="inline-flex items-center bg-aspen-gold-400/30 backdrop-blur-sm px-6 py-3 rounded-full mb-6 fade-in border border-aspen-gold-400/50">
+					<span class="text-aspen-gold-300 font-mono text-sm font-bold tracking-wider">GROWTH JOURNEY</span>
 				</div>
 				
-				<h1 class="font-display text-4xl md:text-6xl lg:text-7xl font-bold mb-6 fade-in drop-shadow-2xl">
+				<h1 class="font-display text-4xl md:text-6xl lg:text-7xl font-bold mb-6 fade-in drop-shadow-2xl leading-tight">
 					From Invisible to 
-					<span class="text-aspen-gold-400">Inevitable</span>
+					<span class="text-aspen-gold-300">Inevitable</span>
 				</h1>
 				
-				<p class="text-xl md:text-2xl mb-8 text-white/95 slide-up drop-shadow-lg font-medium">
+				<p class="text-xl md:text-2xl mb-8 text-white slide-up drop-shadow-lg font-medium leading-relaxed">
 					See how our plans transform Colorado businesses from struggling for attention to leading their markets.
 				</p>
 				
 				<div class="flex flex-col sm:flex-row gap-4 slide-up">
 					<a 
 						href="#journey"
-						class="group bg-aspen-gold-400 text-granite-gray-800 px-8 py-4 rounded-xl font-bold text-lg hover:bg-aspen-gold-500 transform hover:scale-105 hover:-translate-y-1 transition-all duration-300 shadow-2xl hover:shadow-aspen-gold-400/50 flex items-center justify-center"
+						class="group bg-aspen-gold-400 text-granite-gray-900 px-8 py-4 rounded-xl font-bold text-lg hover:bg-aspen-gold-300 transform hover:scale-105 hover:-translate-y-1 transition-all duration-300 shadow-2xl hover:shadow-aspen-gold-400/50 flex items-center justify-center border-2 border-aspen-gold-300"
 					>
 						See Your Journey
 						<svg class="w-6 h-6 ml-3 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -64,7 +64,7 @@
 					
 					<a 
 						href="#choose-plans"
-						class="group border-3 border-white text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white hover:text-skyline-blue-700 transition-all duration-300 backdrop-blur-sm bg-white/10 flex items-center justify-center"
+						class="group border-3 border-white text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white hover:text-skyline-blue-800 transition-all duration-300 backdrop-blur-sm bg-white/20 flex items-center justify-center shadow-xl"
 					>
 						View Plans
 						<svg class="w-6 h-6 ml-3 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -75,12 +75,12 @@
 			</div>
 			
 			<!-- Right Content - Impact Metrics -->
-			<div class="grid grid-cols-2 gap-6">
+			<div class="grid grid-cols-2 gap-4 md:gap-6">
 				{#each impactMetrics as metric}
-					<BaseCard class="p-6 text-center backdrop-blur-sm bg-white/10 border-white/20 hover:bg-white/15 transition-all duration-300">
-						<div class="text-3xl md:text-4xl font-bold text-aspen-gold-400 mb-2">{metric.metric}</div>
-						<div class="text-white font-semibold mb-1">{metric.label}</div>
-						<div class="text-sm text-white/80">{metric.description}</div>
+					<BaseCard class="p-4 md:p-6 text-center backdrop-blur-sm bg-white/20 border-2 border-white/30 hover:bg-white/25 transition-all duration-300 shadow-xl">
+						<div class="text-3xl md:text-4xl font-bold text-aspen-gold-300 mb-2">{metric.metric}</div>
+						<div class="text-white font-bold mb-1">{metric.label}</div>
+						<div class="text-sm text-white font-medium">{metric.description}</div>
 					</BaseCard>
 				{/each}
 			</div>

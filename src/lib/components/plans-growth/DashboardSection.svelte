@@ -66,7 +66,7 @@
 </script>
 
 <!-- Dashboard Section -->
-<section class="py-20 bg-gradient-to-br from-granite-gray-50 to-snowfield-white relative overflow-hidden">
+<section class="py-16 md:py-20 bg-gradient-to-br from-granite-gray-50 to-snowfield-white relative overflow-hidden border-t-4 border-granite-gray-200">
 	<!-- Background elements -->
 	<div class="absolute inset-0 overflow-hidden">
 		<div class="absolute top-20 right-20 w-64 h-64 bg-skyline-blue-100/30 rounded-full blur-3xl animate-pulse"></div>
@@ -85,39 +85,45 @@
 		</div>
 	</div>
 	
-	<div class="max-w-7xl mx-auto px-6 relative z-10">
+	<div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
 		<!-- Header -->
-		<div class="text-center mb-16">
+		<div class="text-center mb-12 md:mb-16">
+			<div class="inline-flex items-center bg-granite-gray-100 px-4 py-2 rounded-full mb-6">
+				<svg class="w-5 h-5 mr-2 text-granite-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+				</svg>
+				<span class="text-granite-gray-700 font-semibold text-sm uppercase tracking-wider">Analytics</span>
+			</div>
 			<div class="mb-6">
-				<p class="text-granite-gray-500 text-lg italic mb-2">*sigh*</p>
-				<h2 class="font-display text-3xl md:text-4xl font-bold text-skyline-blue-600 mb-4">
+				<p class="text-granite-gray-600 text-lg italic mb-2">*sigh*</p>
+				<h2 class="font-display text-3xl md:text-5xl font-bold text-skyline-blue-700 mb-4">
 					Yes...we do the fancy dashboard thing too
 				</h2>
 			</div>
-			<p class="text-xl text-granite-gray-600 max-w-3xl mx-auto mb-8">
+			<p class="text-lg md:text-xl text-granite-gray-700 max-w-3xl mx-auto mb-8 font-medium">
 				Look, everyone wants "analytics" and "dashboards." Fine. But while they're showing you pretty charts about page views, we're tracking what actually matters.
 			</p>
-			<div class="bg-aspen-gold-50 border-l-4 border-aspen-gold-400 p-4 rounded-r-lg max-w-2xl mx-auto">
-				<p class="text-aspen-gold-700 font-medium text-sm">
+			<div class="bg-aspen-gold-100 border-2 border-aspen-gold-400 p-6 rounded-xl max-w-2xl mx-auto shadow-lg">
+				<p class="text-aspen-gold-800 font-bold text-base">
 					Spoiler: It's not how many people visited your blog. It's how many became customers.
 				</p>
 			</div>
 		</div>
 		
 		<!-- Real Metrics Grid -->
-		<div class="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+		<div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-12 md:mb-16">
 			{#each realMetrics as metric}
-				<BaseCard class="p-6 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-2 bg-white border border-skyline-blue-200/50">
+				<BaseCard class="p-4 md:p-6 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-2 bg-white border-2 border-skyline-blue-200 hover:border-skyline-blue-400">
 					<div class="space-y-3">
-						<div class="text-2xl font-bold text-skyline-blue-600">{metric.value}</div>
-						<div class="text-sm font-semibold text-granite-gray-700">{metric.label}</div>
+						<div class="text-2xl md:text-3xl font-bold text-skyline-blue-700">{metric.value}</div>
+						<div class="text-sm font-bold text-granite-gray-800">{metric.label}</div>
 						<div class="flex items-center justify-center space-x-2">
-							<span class="text-green-600 font-medium text-sm">{metric.trend}</span>
-							<svg class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<span class="text-green-700 font-bold text-sm">{metric.trend}</span>
+							<svg class="w-4 h-4 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
 							</svg>
 						</div>
-						<p class="text-xs text-granite-gray-500">{metric.context}</p>
+						<p class="text-xs text-granite-gray-600 font-medium">{metric.context}</p>
 					</div>
 				</BaseCard>
 			{/each}
@@ -125,42 +131,42 @@
 		
 		<!-- Dashboard Features -->
 		<div class="space-y-12">
-			<div class="text-center mb-12">
-				<h3 class="font-display text-2xl md:text-3xl font-bold text-skyline-blue-600 mb-4">
+			<div class="text-center mb-12 bg-white/60 backdrop-blur-sm p-8 rounded-2xl border border-skyline-blue-200">
+				<h3 class="font-display text-2xl md:text-4xl font-bold text-skyline-blue-700 mb-6">
 					What we track (while others count clicks)
 				</h3>
-				<p class="text-granite-gray-600 max-w-2xl mx-auto">
+				<p class="text-granite-gray-700 max-w-2xl mx-auto text-lg font-medium">
 					These aren't vanity metrics. Every data point connects directly to your bank account.
 				</p>
 			</div>
 			
-			<div class="grid lg:grid-cols-2 gap-8">
+			<div class="grid lg:grid-cols-2 gap-6 lg:gap-8">
 				{#each dashboardFeatures as feature}
-					<BaseCard class="p-8 hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border border-skyline-blue-200/50 group">
+					<BaseCard class="p-6 lg:p-8 hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-2 border-skyline-blue-200 hover:border-skyline-blue-400 group bg-white shadow-lg">
 						<div class="space-y-6">
 							<!-- Header -->
-							<div class="flex items-center justify-between">
-								<h4 class="font-bold text-xl text-skyline-blue-600 group-hover:text-skyline-blue-700">
+							<div class="flex items-center justify-between mb-4">
+								<h4 class="font-bold text-xl md:text-2xl text-skyline-blue-700 group-hover:text-skyline-blue-800">
 									{feature.category}
 								</h4>
 								<div class="text-right">
-									<div class="text-sm text-granite-gray-500 line-through">{feature.boring}</div>
-									<div class="text-sm font-semibold text-aspen-gold-600">{feature.real}</div>
+									<div class="text-sm text-granite-gray-600 line-through font-medium">{feature.boring}</div>
+									<div class="text-sm font-bold text-aspen-gold-700">{feature.real}</div>
 								</div>
 							</div>
 							
 							<!-- Insight -->
-							<div>
-								<p class="text-granite-gray-700 font-medium mb-2">{feature.insight}</p>
-								<div class="bg-skyline-blue-50 border-l-4 border-skyline-blue-400 p-3 rounded-r-lg">
-									<p class="text-skyline-blue-700 text-sm font-medium">"{feature.example}"</p>
+							<div class="mb-4">
+								<p class="text-granite-gray-800 font-bold mb-3 text-base">{feature.insight}</p>
+								<div class="bg-skyline-blue-100 border-2 border-skyline-blue-400 p-4 rounded-lg">
+									<p class="text-skyline-blue-800 text-sm font-bold">"{feature.example}"</p>
 								</div>
 							</div>
 							
 							<!-- Metric -->
-							<div class="flex items-center justify-between pt-4 border-t border-granite-gray-200">
-								<span class="text-granite-gray-600 text-sm">Key Metric:</span>
-								<span class="text-green-600 font-bold">{feature.metric}</span>
+							<div class="flex items-center justify-between pt-4 border-t-2 border-granite-gray-300">
+								<span class="text-granite-gray-700 text-sm font-bold">Key Metric:</span>
+								<span class="text-green-700 font-bold text-lg">{feature.metric}</span>
 							</div>
 						</div>
 					</BaseCard>
