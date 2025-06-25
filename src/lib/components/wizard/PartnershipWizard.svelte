@@ -8,6 +8,7 @@
 		PartnershipPreferencesStep,
 		VisionDetailsStep
 	} from './partnership';
+	import { validators, validateForm } from '$lib/utils/formHelpers';
 	
 	const dispatch = createEventDispatcher();
 	
@@ -51,46 +52,53 @@
 	// Validation state
 	let errors: Record<string, string> = {};
 	
+	// Validation rules per step
+	const stepValidation = [
+		// Step 0: Founder Info
+		{
+			firstName: [validators.required],
+			lastName: [validators.required],
+			email: [validators.required, validators.email],
+			phone: [validators.required]
+		},
+		// Step 1: Business Basics
+		{
+			companyName: [validators.required],
+			industry: [validators.required],
+			foundedYear: [validators.required]
+		},
+		// Step 2: Business Details
+		{
+			currentRevenue: [validators.required],
+			teamSize: [validators.required],
+			fundingStatus: [validators.required]
+		},
+		// Step 3: Partnership Preferences
+		{
+			partnershipType: [validators.required],
+			marketingBudget: [validators.required],
+			timeframe: [validators.required]
+		},
+		// Step 4: Vision & Details
+		{
+			businessDescription: [validators.required],
+			uniqueValue: [validators.required],
+			goals: [validators.required],
+			whyPartnership: [validators.required]
+		}
+	];
+	
 	// Step validation
 	function validateStep(step: number): boolean {
-		errors = {};
-		
-		switch (step) {
-			case 0: // Founder Info
-				if (!formData.firstName.trim()) errors.firstName = 'First name is required';
-				if (!formData.lastName.trim()) errors.lastName = 'Last name is required';
-				if (!formData.email.trim()) errors.email = 'Email is required';
-				if (!formData.phone.trim()) errors.phone = 'Phone is required';
-				break;
-				
-			case 1: // Business Basics
-				if (!formData.companyName.trim()) errors.companyName = 'Company name is required';
-				if (!formData.industry) errors.industry = 'Industry is required';
-				if (!formData.foundedYear) errors.foundedYear = 'Founded year is required';
-				break;
-				
-			case 2: // Business Details
-				if (!formData.currentRevenue) errors.currentRevenue = 'Current revenue is required';
-				if (!formData.teamSize) errors.teamSize = 'Team size is required';
-				if (!formData.fundingStatus) errors.fundingStatus = 'Funding status is required';
-				break;
-				
-			case 3: // Partnership Preferences
-				if (!formData.partnershipType) errors.partnershipType = 'Partnership type is required';
-				if (!formData.marketingBudget) errors.marketingBudget = 'Budget range is required';
-				if (!formData.timeframe) errors.timeframe = 'Timeframe is required';
-				break;
-				
-			case 4: // Vision & Details
-				if (!formData.businessDescription.trim()) errors.businessDescription = 'Business description is required';
-				if (!formData.uniqueValue.trim()) errors.uniqueValue = 'Unique value proposition is required';
-				if (!formData.goals.trim()) errors.goals = 'Growth goals are required';
-				if (!formData.whyPartnership.trim()) errors.whyPartnership = 'Please explain why you want a partnership';
-				break;
-		}
-		
+		errors = validateForm(formData, stepValidation[step]);
 		return Object.keys(errors).length === 0;
 	}
+	
+	// Check if current step is valid without setting errors
+	$: currentStepValid = (() => {
+		const tempErrors = validateForm(formData, stepValidation[currentStep]);
+		return Object.keys(tempErrors).length === 0;
+	})();
 	
 	// Step configurations
 	const stepConfigs = [
@@ -120,12 +128,14 @@
 	function nextStep() {
 		if (validateStep(currentStep)) {
 			currentStep++;
+			errors = {}; // Clear errors when moving forward
 		}
 	}
 	
 	function prevStep() {
 		if (currentStep > 0) {
 			currentStep--;
+			errors = {}; // Clear errors when going back
 		}
 	}
 	
@@ -155,18 +165,21 @@
 				throw new Error('Submission failed');
 			}
 		} catch (error) {
-			console.error('Form submission error:', error);
+			if (import.meta.env.DEV) {
+				console.error('Form submission error:', error);
+			}
 			errors.submit = 'There was an error submitting your application. Please try again.';
 		} finally {
 			loading = false;
 		}
 	}
 	
-	function handleStepChange(formData: any) {
-		// Update form data when step changes
+	function handleStepChange() {
+		// Clear errors when user makes changes
+		errors = {};
 	}
 	
-	$: canGoNext = validateStep(currentStep);
+	$: canGoNext = currentStepValid;
 	$: isLastStep = currentStep === totalSteps - 1;
 	$: currentConfig = stepConfigs[currentStep];
 </script>
