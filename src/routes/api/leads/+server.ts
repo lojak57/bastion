@@ -24,6 +24,7 @@ interface LeadFormData {
 	timeline?: string;
 	pageUrl?: string;
 	formName?: string;
+	formType?: string;
 	utmSource?: string;
 	utmMedium?: string;
 	utmCampaign?: string;
@@ -45,6 +46,7 @@ interface TrueFormPayload extends LeadFormData {
 	siteName: string;
 	campaign: string;
 	submittedAt: string;
+	tags: string[];
 }
 
 // Get environment variables from centralized config
@@ -95,7 +97,7 @@ async function submitToTrueForm(leadData: TrueFormPayload) {
 }
 
 // Extract URL parameters helper
-function extractUrlParams(url: string): ExtractedUrlParams {
+function extractUrlParams(url: string): ExtractedUrParam {
 	const urlObj = new URL(url);
 	return {
 		utmSource: urlObj.searchParams.get('utm_source') || undefined,
@@ -104,6 +106,67 @@ function extractUrlParams(url: string): ExtractedUrlParams {
 		adGroup: urlObj.searchParams.get('utm_term') || undefined,
 		keyword: urlObj.searchParams.get('utm_content') || undefined
 	};
+}
+
+// Determine lead tags based on form data and source
+function determineLeadTags(leadData: LeadFormData): string[] {
+	const tags: string[] = [];
+	
+	// Base site tag
+	tags.push(`site:${SITE_CONFIG.api.whiteLabelId}`);
+	
+	// Form type tags
+	if (leadData.formType === 'partnership') {
+		tags.push('form:solo-biz-helper');
+		tags.push('interest:partnership');
+	} else if (leadData.formName?.toLowerCase().includes('lead capture')) {
+		tags.push('form:lead-capture');
+		tags.push('interest:marketing-services');
+	}
+	
+	// Service interest tags
+	if (leadData.serviceInterest) {
+		tags.push(`service:${leadData.serviceInterest.toLowerCase().replace(/\s+/g, '-')}`);
+	}
+	
+	// Budget tier tags
+	if (leadData.monthlyBudget) {
+		const budget = leadData.monthlyBudget.toLowerCase();
+		if (budget.includes('10,000') || budget.includes('10000')) {
+			tags.push('budget:enterprise');
+		} else if (budget.includes('5,000') || budget.includes('5000')) {
+			tags.push('budget:premium');
+		} else if (budget.includes('2,500') || budget.includes('2500')) {
+			tags.push('budget:growth');
+		} else {
+			tags.push('budget:starter');
+		}
+	}
+	
+	// UTM source tags
+	if (leadData.utmSource) {
+		tags.push(`source:${leadData.utmSource}`);
+	}
+	if (leadData.utmMedium) {
+		tags.push(`medium:${leadData.utmMedium}`);
+	}
+	if (leadData.utmCampaign) {
+		tags.push(`campaign:${leadData.utmCampaign}`);
+	}
+	
+	// Timeline urgency tags
+	if (leadData.timeframe) {
+		const timeframe = leadData.timeframe.toLowerCase();
+		if (timeframe.includes('immediate') || timeframe.includes('asap')) {
+			tags.push('urgency:high');
+		} else if (timeframe.includes('1-3 months')) {
+			tags.push('urgency:medium');
+		} else {
+			tags.push('urgency:low');
+		}
+	}
+	
+	return tags;
 }
 
 export const POST: RequestHandler = async ({ request, getClientAddress }) => {
@@ -138,6 +201,9 @@ export const POST: RequestHandler = async ({ request, getClientAddress }) => {
 		// Get white label configuration
 		const whiteLabelConfig = getWhiteLabelConfig();
 		
+		// Determine lead tags based on form type and source
+		const leadTags = determineLeadTags(leadData);
+		
 		// Prepare payload for TrueForm
 		const trueFormPayload: TrueFormPayload = {
 			...leadData,
@@ -146,6 +212,7 @@ export const POST: RequestHandler = async ({ request, getClientAddress }) => {
 			siteName: whiteLabelConfig.siteName,
 			campaign: leadData.utmCampaign || urlParams.utmCampaign || 'organic',
 			submittedAt: new Date().toISOString(),
+			tags: leadTags,
 			// Merge URL params
 			utmSource: leadData.utmSource || urlParams.utmSource || 'direct',
 			utmMedium: leadData.utmMedium || urlParams.utmMedium || 'website',

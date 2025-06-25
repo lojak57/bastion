@@ -116,6 +116,7 @@
 				...formData,
 				pageUrl: window.location.href,
 				formName: formName,
+				formType: 'lead-capture',
 				submittedAt: new Date().toISOString()
 			};
 			
