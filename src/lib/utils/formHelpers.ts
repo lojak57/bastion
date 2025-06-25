@@ -3,28 +3,48 @@
  */
 
 export const validators = {
-  required: (value: any) => !!value?.toString().trim() || 'This field is required',
+  required: (value: any) => {
+    const isValid = !!value?.toString().trim();
+    return isValid ? true : 'This field is required';
+  },
   
-  email: (value: string) => 
-    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value) || 'Invalid email address',
+  email: (value: string) => {
+    if (!value) return 'Email is required';
+    const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+    return isValid ? true : 'Invalid email address';
+  },
   
-  phone: (value: string) => 
-    !value || /^[\+]?[\d\s\-\(\)]+$/.test(value) || 'Invalid phone number',
+  phone: (value: string) => {
+    if (!value) return true; // Phone is optional
+    const isValid = /^[\+]?[\d\s\-\(\)]+$/.test(value);
+    return isValid ? true : 'Invalid phone number';
+  },
   
-  url: (value: string) =>
-    !value || /^https?:\/\//.test(value) || 'URL must start with http:// or https://',
+  url: (value: string) => {
+    if (!value) return true; // URL is optional
+    const isValid = /^https?:\/\//.test(value);
+    return isValid ? true : 'URL must start with http:// or https://';
+  },
   
-  min: (min: number) => (value: string | number) =>
-    Number(value) >= min || `Must be at least ${min}`,
+  min: (min: number) => (value: string | number) => {
+    const isValid = Number(value) >= min;
+    return isValid ? true : `Must be at least ${min}`;
+  },
   
-  max: (max: number) => (value: string | number) =>
-    Number(value) <= max || `Must be no more than ${max}`,
+  max: (max: number) => (value: string | number) => {
+    const isValid = Number(value) <= max;
+    return isValid ? true : `Must be no more than ${max}`;
+  },
   
-  minLength: (min: number) => (value: string) =>
-    value.length >= min || `Must be at least ${min} characters`,
+  minLength: (min: number) => (value: string) => {
+    const isValid = value.length >= min;
+    return isValid ? true : `Must be at least ${min} characters`;
+  },
   
-  maxLength: (max: number) => (value: string) =>
-    value.length <= max || `Must be no more than ${max} characters`
+  maxLength: (max: number) => (value: string) => {
+    const isValid = value.length <= max;
+    return isValid ? true : `Must be no more than ${max} characters`;
+  }
 };
 
 export function validateForm<T extends Record<string, any>>(
