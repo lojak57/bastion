@@ -10,7 +10,7 @@ return {
 	assets: new Set(["favicon.ico","favicon.png","favicon.svg","images/5280-hero-bg.png","images/hero-mountains.png","images/logo/weknowco-full-logo.png","images/logo/weknowco-icon.svg"]),
 	mimeTypes: {".png":"image/png",".svg":"image/svg+xml"},
 	_: {
-		client: {start:"_app/immutable/entry/start.DdzwzjUN.js",app:"_app/immutable/entry/app.1UoXp4Gl.js",imports:["_app/immutable/entry/start.DdzwzjUN.js","_app/immutable/chunks/i6PB7SaW.js","_app/immutable/chunks/C63uuvp8.js","_app/immutable/chunks/DjEDCbSZ.js","_app/immutable/entry/app.1UoXp4Gl.js","_app/immutable/chunks/C63uuvp8.js","_app/immutable/chunks/Q8BvE5vV.js","_app/immutable/chunks/BSdB2KAb.js","_app/immutable/chunks/DjEDCbSZ.js","_app/immutable/chunks/DO8Tl_SB.js"],stylesheets:[],fonts:[],uses_env_dynamic_public:false},
+		client: {start:"_app/immutable/entry/start.qYHG9o6d.js",app:"_app/immutable/entry/app.Bj8Zdoee.js",imports:["_app/immutable/entry/start.qYHG9o6d.js","_app/immutable/chunks/q6h4cRtj.js","_app/immutable/chunks/DtJ7uDLr.js","_app/immutable/chunks/epgPq6-0.js","_app/immutable/chunks/CYm4uuzn.js","_app/immutable/entry/app.Bj8Zdoee.js","_app/immutable/chunks/DtJ7uDLr.js","_app/immutable/chunks/B67tOxxB.js","_app/immutable/chunks/BmrP2hN_.js","_app/immutable/chunks/epgPq6-0.js","_app/immutable/chunks/DlIAEsFF.js","_app/immutable/chunks/CYm4uuzn.js","_app/immutable/chunks/BSAJm3JF.js"],stylesheets:[],fonts:[],uses_env_dynamic_public:false},
 		nodes: [
 			__memo(() => import('../output/server/nodes/0.js')),
 			__memo(() => import('../output/server/nodes/1.js')),
@@ -20,28 +20,34 @@ return {
 			__memo(() => import('../output/server/nodes/5.js')),
 			__memo(() => import('../output/server/nodes/6.js')),
 			__memo(() => import('../output/server/nodes/7.js')),
-			__memo(() => import('../output/server/nodes/8.js'))
+			__memo(() => import('../output/server/nodes/8.js')),
+			__memo(() => import('../output/server/nodes/9.js')),
+			__memo(() => import('../output/server/nodes/10.js')),
+			__memo(() => import('../output/server/nodes/11.js')),
+			__memo(() => import('../output/server/nodes/12.js')),
+			__memo(() => import('../output/server/nodes/13.js')),
+			__memo(() => import('../output/server/nodes/14.js'))
 		],
 		routes: [
 			{
 				id: "/",
 				pattern: /^\/$/,
 				params: [],
-				page: { layouts: [0,], errors: [1,], leaf: 2 },
+				page: { layouts: [0,], errors: [1,], leaf: 6 },
 				endpoint: null
 			},
 			{
-				id: "/5280-site",
+				id: "/(marketing)/5280-site",
 				pattern: /^\/5280-site\/?$/,
 				params: [],
-				page: { layouts: [0,], errors: [1,], leaf: 3 },
+				page: { layouts: [0,4,], errors: [1,,], leaf: 11 },
 				endpoint: null
 			},
 			{
-				id: "/about",
+				id: "/(company)/about",
 				pattern: /^\/about\/?$/,
 				params: [],
-				page: { layouts: [0,], errors: [1,], leaf: 4 },
+				page: { layouts: [0,2,], errors: [1,,], leaf: 7 },
 				endpoint: null
 			},
 			{
@@ -52,31 +58,45 @@ return {
 				endpoint: __memo(() => import('../output/server/entries/endpoints/api/leads/_server.ts.js'))
 			},
 			{
-				id: "/contact",
+				id: "/(company)/contact",
 				pattern: /^\/contact\/?$/,
 				params: [],
-				page: { layouts: [0,], errors: [1,], leaf: 5 },
+				page: { layouts: [0,2,], errors: [1,,], leaf: 8 },
 				endpoint: null
 			},
 			{
-				id: "/plans-growth",
+				id: "/(marketing)/plans-growth",
 				pattern: /^\/plans-growth\/?$/,
 				params: [],
-				page: { layouts: [0,], errors: [1,], leaf: 6 },
+				page: { layouts: [0,4,], errors: [1,,], leaf: 12 },
 				endpoint: null
 			},
 			{
-				id: "/solo-biz-helper",
+				id: "/(legal)/privacy",
+				pattern: /^\/privacy\/?$/,
+				params: [],
+				page: { layouts: [0,3,], errors: [1,,], leaf: 9 },
+				endpoint: null
+			},
+			{
+				id: "/(marketing)/solo-biz-helper",
 				pattern: /^\/solo-biz-helper\/?$/,
 				params: [],
-				page: { layouts: [0,], errors: [1,], leaf: 7 },
+				page: { layouts: [0,4,], errors: [1,,], leaf: 13 },
 				endpoint: null
 			},
 			{
-				id: "/thank-you",
+				id: "/(legal)/terms",
+				pattern: /^\/terms\/?$/,
+				params: [],
+				page: { layouts: [0,3,], errors: [1,,], leaf: 10 },
+				endpoint: null
+			},
+			{
+				id: "/(system)/thank-you",
 				pattern: /^\/thank-you\/?$/,
 				params: [],
-				page: { layouts: [0,], errors: [1,], leaf: 8 },
+				page: { layouts: [0,5,], errors: [1,,], leaf: 14 },
 				endpoint: null
 			}
 		],

@@ -36,10 +36,10 @@ function _page($$payload) {
       $$payload2.out += `<!----> `;
       BaseButton($$payload2, {
         variant: "outline",
-        href: "/about",
+        href: "/case-stories",
         class: "btn-outline",
         children: ($$payload3) => {
-          $$payload3.out += `<!---->Learn About Us`;
+          $$payload3.out += `<!---->View Our Work`;
         },
         $$slots: { default: true }
       });

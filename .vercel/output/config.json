@@ -16,11 +16,11 @@
 		},
 		{
 			"src": "^/5280-site/?(?:/__data.json)?$",
-			"dest": "/5280-site"
+			"dest": "/(marketing)/5280-site"
 		},
 		{
 			"src": "^/about/?(?:/__data.json)?$",
-			"dest": "/about"
+			"dest": "/(company)/about"
 		},
 		{
 			"src": "^/api/leads/?(?:/__data.json)?$",
@@ -28,19 +28,27 @@
 		},
 		{
 			"src": "^/contact/?(?:/__data.json)?$",
-			"dest": "/contact"
+			"dest": "/(company)/contact"
 		},
 		{
 			"src": "^/plans-growth/?(?:/__data.json)?$",
-			"dest": "/plans-growth"
+			"dest": "/(marketing)/plans-growth"
+		},
+		{
+			"src": "^/privacy/?(?:/__data.json)?$",
+			"dest": "/(legal)/privacy"
 		},
 		{
 			"src": "^/solo-biz-helper/?(?:/__data.json)?$",
-			"dest": "/solo-biz-helper"
+			"dest": "/(marketing)/solo-biz-helper"
+		},
+		{
+			"src": "^/terms/?(?:/__data.json)?$",
+			"dest": "/(legal)/terms"
 		},
 		{
 			"src": "^/thank-you/?(?:/__data.json)?$",
-			"dest": "/thank-you"
+			"dest": "/(system)/thank-you"
 		},
 		{
 			"src": "/.*",

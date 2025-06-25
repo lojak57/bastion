@@ -1,4 +1,4 @@
-import { C as push, P as fallback, I as attr, K as escape_html, J as attr_class, Q as bind_props, E as pop, W as attr_style, O as slot, M as stringify } from "./index.js";
+import { C as push, P as fallback, I as attr, K as escape_html, J as attr_class, Q as bind_props, E as pop, U as attr_style, O as slot, M as stringify } from "./index.js";
 /* empty css                                           */
 function LuxuryInput($$payload, $$props) {
   push();

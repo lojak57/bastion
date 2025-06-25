@@ -1,0 +1,1 @@
+export { default as component } from "../../../../src/routes/(marketing)/solo-biz-helper/+page.svelte";

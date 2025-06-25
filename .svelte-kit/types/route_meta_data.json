@@ -1,12 +1,18 @@
 {
+	"/(system)": [],
+	"/(marketing)": [],
+	"/(legal)": [],
+	"/(company)": [],
 	"/": [],
-	"/5280-site": [],
-	"/about": [],
+	"/(marketing)/5280-site": [],
+	"/(company)/about": [],
 	"/api/leads": [
 		"src/routes/api/leads/+server.ts"
 	],
-	"/contact": [],
-	"/plans-growth": [],
-	"/solo-biz-helper": [],
-	"/thank-you": []
+	"/(company)/contact": [],
+	"/(marketing)/plans-growth": [],
+	"/(legal)/privacy": [],
+	"/(marketing)/solo-biz-helper": [],
+	"/(legal)/terms": [],
+	"/(system)/thank-you": []
 }

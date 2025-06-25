@@ -505,6 +505,159 @@
       "_shared-server.js"
     ]
   },
+  "src/routes/(company)/+layout.svelte": {
+    "file": "entries/pages/(company)/_layout.svelte.js",
+    "name": "entries/pages/(company)/_layout.svelte",
+    "src": "src/routes/(company)/+layout.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js"
+    ]
+  },
+  "src/routes/(company)/about/+page.svelte": {
+    "file": "entries/pages/(company)/about/_page.svelte.js",
+    "name": "entries/pages/(company)/about/_page.svelte",
+    "src": "src/routes/(company)/about/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_LeadCaptureWizard.js",
+      "_WizardContainer.js",
+      "_BaseCard.js"
+    ],
+    "css": [
+      "_app/immutable/assets/TimelineItem.DgPsw5nI.css"
+    ]
+  },
+  "src/routes/(company)/contact/+page.svelte": {
+    "file": "entries/pages/(company)/contact/_page.svelte.js",
+    "name": "entries/pages/(company)/contact/_page.svelte",
+    "src": "src/routes/(company)/contact/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_BaseCard.js",
+      "_LeadCaptureWizard.js",
+      "_stores.js"
+    ],
+    "css": [
+      "_app/immutable/assets/TimelineItem.DgPsw5nI.css"
+    ]
+  },
+  "src/routes/(legal)/+layout.svelte": {
+    "file": "entries/pages/(legal)/_layout.svelte.js",
+    "name": "entries/pages/(legal)/_layout.svelte",
+    "src": "src/routes/(legal)/+layout.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js"
+    ]
+  },
+  "src/routes/(legal)/privacy/+page.svelte": {
+    "file": "entries/pages/(legal)/privacy/_page.svelte.js",
+    "name": "entries/pages/(legal)/privacy/_page.svelte",
+    "src": "src/routes/(legal)/privacy/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_BaseCard.js"
+    ],
+    "css": [
+      "_app/immutable/assets/TimelineItem.DgPsw5nI.css"
+    ]
+  },
+  "src/routes/(legal)/terms/+page.svelte": {
+    "file": "entries/pages/(legal)/terms/_page.svelte.js",
+    "name": "entries/pages/(legal)/terms/_page.svelte",
+    "src": "src/routes/(legal)/terms/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_BaseCard.js"
+    ],
+    "css": [
+      "_app/immutable/assets/TimelineItem.DgPsw5nI.css"
+    ]
+  },
+  "src/routes/(marketing)/+layout.svelte": {
+    "file": "entries/pages/(marketing)/_layout.svelte.js",
+    "name": "entries/pages/(marketing)/_layout.svelte",
+    "src": "src/routes/(marketing)/+layout.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js"
+    ]
+  },
+  "src/routes/(marketing)/5280-site/+page.svelte": {
+    "file": "entries/pages/(marketing)/5280-site/_page.svelte.js",
+    "name": "entries/pages/(marketing)/5280-site/_page.svelte",
+    "src": "src/routes/(marketing)/5280-site/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_BaseCard.js",
+      "_BaseButton.js",
+      "_LeadCaptureWizard.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page.fTNVFbpC.css",
+      "_app/immutable/assets/TimelineItem.DgPsw5nI.css"
+    ]
+  },
+  "src/routes/(marketing)/plans-growth/+page.svelte": {
+    "file": "entries/pages/(marketing)/plans-growth/_page.svelte.js",
+    "name": "entries/pages/(marketing)/plans-growth/_page.svelte",
+    "src": "src/routes/(marketing)/plans-growth/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_BaseCard.js",
+      "_LeadCaptureWizard.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page.FNgOliez.css",
+      "_app/immutable/assets/TimelineItem.DgPsw5nI.css",
+      "_app/immutable/assets/Hero._BFMwDMB.css"
+    ]
+  },
+  "src/routes/(marketing)/solo-biz-helper/+page.svelte": {
+    "file": "entries/pages/(marketing)/solo-biz-helper/_page.svelte.js",
+    "name": "entries/pages/(marketing)/solo-biz-helper/_page.svelte",
+    "src": "src/routes/(marketing)/solo-biz-helper/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_BaseCard.js",
+      "_WizardContainer.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page.FNgOliez.css",
+      "_app/immutable/assets/TimelineItem.DgPsw5nI.css"
+    ]
+  },
+  "src/routes/(system)/+layout.svelte": {
+    "file": "entries/pages/(system)/_layout.svelte.js",
+    "name": "entries/pages/(system)/_layout.svelte",
+    "src": "src/routes/(system)/+layout.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js"
+    ]
+  },
+  "src/routes/(system)/thank-you/+page.svelte": {
+    "file": "entries/pages/(system)/thank-you/_page.svelte.js",
+    "name": "entries/pages/(system)/thank-you/_page.svelte",
+    "src": "src/routes/(system)/thank-you/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_BaseButton.js",
+      "_BaseCard.js"
+    ],
+    "css": [
+      "_app/immutable/assets/TimelineItem.DgPsw5nI.css"
+    ]
+  },
   "src/routes/+error.svelte": {
     "file": "entries/pages/_error.svelte.js",
     "name": "entries/pages/_error.svelte",
@@ -530,7 +683,7 @@
       "_stores.js"
     ],
     "css": [
-      "_app/immutable/assets/_layout.pzv9E_K7.css"
+      "_app/immutable/assets/_layout.C7F3RHbj.css"
     ],
     "assets": [
       "_app/immutable/assets/inter-cyrillic-ext-400-normal.Dc4VJyIJ.woff2",
@@ -651,36 +804,6 @@
       "_app/immutable/assets/Hero._BFMwDMB.css"
     ]
   },
-  "src/routes/5280-site/+page.svelte": {
-    "file": "entries/pages/5280-site/_page.svelte.js",
-    "name": "entries/pages/5280-site/_page.svelte",
-    "src": "src/routes/5280-site/+page.svelte",
-    "isEntry": true,
-    "imports": [
-      "_index.js",
-      "_BaseCard.js",
-      "_BaseButton.js",
-      "_LeadCaptureWizard.js"
-    ],
-    "css": [
-      "_app/immutable/assets/_page.fTNVFbpC.css",
-      "_app/immutable/assets/TimelineItem.DgPsw5nI.css"
-    ]
-  },
-  "src/routes/about/+page.svelte": {
-    "file": "entries/pages/about/_page.svelte.js",
-    "name": "entries/pages/about/_page.svelte",
-    "src": "src/routes/about/+page.svelte",
-    "isEntry": true,
-    "imports": [
-      "_index.js",
-      "_LeadCaptureWizard.js",
-      "_WizardContainer.js"
-    ],
-    "css": [
-      "_app/immutable/assets/TimelineItem.DgPsw5nI.css"
-    ]
-  },
   "src/routes/api/leads/+server.ts": {
     "file": "entries/endpoints/api/leads/_server.ts.js",
     "name": "entries/endpoints/api/leads/_server.ts",
@@ -689,66 +812,6 @@
     "imports": [
       "_index2.js",
       "_shared-server.js"
-    ]
-  },
-  "src/routes/contact/+page.svelte": {
-    "file": "entries/pages/contact/_page.svelte.js",
-    "name": "entries/pages/contact/_page.svelte",
-    "src": "src/routes/contact/+page.svelte",
-    "isEntry": true,
-    "imports": [
-      "_index.js",
-      "_BaseCard.js",
-      "_LeadCaptureWizard.js",
-      "_stores.js"
-    ],
-    "css": [
-      "_app/immutable/assets/TimelineItem.DgPsw5nI.css"
-    ]
-  },
-  "src/routes/plans-growth/+page.svelte": {
-    "file": "entries/pages/plans-growth/_page.svelte.js",
-    "name": "entries/pages/plans-growth/_page.svelte",
-    "src": "src/routes/plans-growth/+page.svelte",
-    "isEntry": true,
-    "imports": [
-      "_index.js",
-      "_BaseCard.js",
-      "_LeadCaptureWizard.js"
-    ],
-    "css": [
-      "_app/immutable/assets/_page.FNgOliez.css",
-      "_app/immutable/assets/TimelineItem.DgPsw5nI.css",
-      "_app/immutable/assets/Hero._BFMwDMB.css"
-    ]
-  },
-  "src/routes/solo-biz-helper/+page.svelte": {
-    "file": "entries/pages/solo-biz-helper/_page.svelte.js",
-    "name": "entries/pages/solo-biz-helper/_page.svelte",
-    "src": "src/routes/solo-biz-helper/+page.svelte",
-    "isEntry": true,
-    "imports": [
-      "_index.js",
-      "_BaseCard.js",
-      "_WizardContainer.js"
-    ],
-    "css": [
-      "_app/immutable/assets/_page.FNgOliez.css",
-      "_app/immutable/assets/TimelineItem.DgPsw5nI.css"
-    ]
-  },
-  "src/routes/thank-you/+page.svelte": {
-    "file": "entries/pages/thank-you/_page.svelte.js",
-    "name": "entries/pages/thank-you/_page.svelte",
-    "src": "src/routes/thank-you/+page.svelte",
-    "isEntry": true,
-    "imports": [
-      "_index.js",
-      "_BaseButton.js",
-      "_BaseCard.js"
-    ],
-    "css": [
-      "_app/immutable/assets/TimelineItem.DgPsw5nI.css"
     ]
   }
 }

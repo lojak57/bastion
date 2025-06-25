@@ -2,7 +2,7 @@
 
 export const index = 2;
 let component_cache;
-export const component = async () => component_cache ??= (await import('../entries/pages/_page.svelte.js')).default;
-export const imports = ["_app/immutable/nodes/2.C9uqYlYf.js","_app/immutable/chunks/BSdB2KAb.js","_app/immutable/chunks/C63uuvp8.js","_app/immutable/chunks/BqJP4IoS.js","_app/immutable/chunks/BEEjIp7b.js","_app/immutable/chunks/C5nZIJ0J.js","_app/immutable/chunks/aQnjsIFo.js","_app/immutable/chunks/DO8Tl_SB.js","_app/immutable/chunks/P9Cr3KiT.js","_app/immutable/chunks/Q8BvE5vV.js","_app/immutable/chunks/CL-FCtH5.js"];
-export const stylesheets = ["_app/immutable/assets/TimelineItem.HEh5thfm.css","_app/immutable/assets/2.I5RIpamO.css","_app/immutable/assets/Hero._BFMwDMB.css"];
+export const component = async () => component_cache ??= (await import('../entries/pages/(company)/_layout.svelte.js')).default;
+export const imports = ["_app/immutable/nodes/2.jX27ic-I.js","_app/immutable/chunks/DlIAEsFF.js","_app/immutable/chunks/DtJ7uDLr.js","_app/immutable/chunks/orXIRW1V.js"];
+export const stylesheets = [];
 export const fonts = [];
