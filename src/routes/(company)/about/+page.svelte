@@ -2,7 +2,8 @@
 	import {
 		AboutLetter,
 		AboutStats,
-		AboutCTA
+		AboutCTA,
+		TestimonialsSection
 	} from '$lib/components/about';
 </script>
 
@@ -13,4 +14,5 @@
 
 <AboutStats />
 <AboutLetter />
+<TestimonialsSection />
 <AboutCTA />
