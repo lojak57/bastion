@@ -43,37 +43,38 @@
 		decisionMaker: false
 	};
 	
+	import { validators, validateForm } from '$lib/utils/formHelpers';
+	
 	// Validation state
 	let errors: Record<string, string> = {};
 	
+	// Validation rules per step
+	const stepValidation = [
+		// Step 0: Basic Info
+		{
+			firstName: [validators.required],
+			lastName: [validators.required],
+			email: [validators.required, validators.email]
+		},
+		// Step 1: Business Info
+		{
+			companyName: [validators.required],
+			phone: [validators.phone]
+		},
+		// Step 2: Project Details
+		{
+			monthlyBudget: [validators.required],
+			timeframe: [validators.required]
+		},
+		// Step 3: Goals
+		{
+			goals: [validators.required]
+		}
+	];
+	
 	// Step validation
 	function validateStep(step: number): boolean {
-		errors = {};
-		
-		switch (step) {
-			case 0:
-				if (!formData.firstName.trim()) errors.firstName = 'First name is required';
-				if (!formData.lastName.trim()) errors.lastName = 'Last name is required';
-				if (!formData.email.trim()) errors.email = 'Email is required';
-				else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-					errors.email = 'Please enter a valid email address';
-				}
-				break;
-			case 1:
-				if (!formData.companyName.trim()) errors.companyName = 'Company name is required';
-				if (formData.phone && !/^[\+]?[\d\s\-\(\)]+$/.test(formData.phone)) {
-					errors.phone = 'Please enter a valid phone number';
-				}
-				break;
-			case 2:
-				if (!formData.monthlyBudget) errors.monthlyBudget = 'Please select a budget range';
-				if (!formData.timeframe) errors.timeframe = 'Please select a timeframe';
-				break;
-			case 3:
-				if (!formData.goals.trim()) errors.goals = 'Please tell us about your goals';
-				break;
-		}
-		
+		errors = validateForm(formData, stepValidation[step]);
 		return Object.keys(errors).length === 0;
 	}
 	

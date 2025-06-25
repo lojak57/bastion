@@ -1,5 +1,8 @@
 import { json, error } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
+import { rateLimiters, createRateLimitResponse } from '$lib/utils/rateLimit';
+import { ENV, getWhiteLabelConfig } from '$lib/utils/env';
+import { SITE_CONFIG } from '$lib/config/site.config';
 
 // Types for lead data
 interface LeadFormData {
@@ -28,17 +31,25 @@ interface LeadFormData {
 	keyword?: string;
 }
 
+interface ExtractedUrlParams {
+	utmSource?: string;
+	utmMedium?: string;
+	utmCampaign?: string;
+	adGroup?: string;
+	keyword?: string;
+}
+
 interface TrueFormPayload extends LeadFormData {
 	leadSource: string;
+	whiteLabelId: string;
+	siteName: string;
 	campaign: string;
 	submittedAt: string;
 }
 
-import { env } from '$env/dynamic/private';
-
-// Environment variables (add to .env)
-const TRUEFORM_API_URL = env.TRUEFORM_API_URL || 'https://your-trueform-domain.com';
-const TRUEFORM_API_KEY = env.TRUEFORM_API_KEY || '';
+// Get environment variables from centralized config
+const TRUEFORM_API_URL = ENV.TRUEFORM_API_URL;
+const TRUEFORM_API_KEY = ENV.TRUEFORM_API_KEY;
 
 // Validation function
 function validateLeadData(data: any): { success: boolean; errors?: string[] } {
@@ -63,7 +74,7 @@ function validateLeadData(data: any): { success: boolean; errors?: string[] } {
 // Submit to TrueForm CRM
 async function submitToTrueForm(leadData: TrueFormPayload) {
 	try {
-		const response = await fetch(`${TRUEFORM_API_URL}/api/weknowco-leads`, {
+		const response = await fetch(`${TRUEFORM_API_URL}/api/${SITE_CONFIG.api.whiteLabelId}-leads`, {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
@@ -84,7 +95,7 @@ async function submitToTrueForm(leadData: TrueFormPayload) {
 }
 
 // Extract URL parameters helper
-function extractUrlParams(url: string) {
+function extractUrlParams(url: string): ExtractedUrlParams {
 	const urlObj = new URL(url);
 	return {
 		utmSource: urlObj.searchParams.get('utm_source') || undefined,
@@ -95,7 +106,16 @@ function extractUrlParams(url: string) {
 	};
 }
 
-export const POST: RequestHandler = async ({ request }) => {
+export const POST: RequestHandler = async ({ request, getClientAddress }) => {
+	// Apply rate limiting
+	if (ENV.ENABLE_RATE_LIMITING) {
+		const clientIp = getClientAddress();
+		const rateLimitResult = rateLimiters.forms.check(clientIp);
+		
+		if (!rateLimitResult.allowed) {
+			return createRateLimitResponse(rateLimitResult.resetTime);
+		}
+	}
 	try {
 		const leadData: LeadFormData = await request.json();
 		
@@ -115,10 +135,15 @@ export const POST: RequestHandler = async ({ request }) => {
 		// Extract URL parameters if pageUrl is provided
 		const urlParams = leadData.pageUrl ? extractUrlParams(leadData.pageUrl) : {};
 		
+		// Get white label configuration
+		const whiteLabelConfig = getWhiteLabelConfig();
+		
 		// Prepare payload for TrueForm
 		const trueFormPayload: TrueFormPayload = {
 			...leadData,
-			leadSource: 'weknowco',
+			leadSource: whiteLabelConfig.leadSource,
+			whiteLabelId: whiteLabelConfig.siteId,
+			siteName: whiteLabelConfig.siteName,
 			campaign: leadData.utmCampaign || urlParams.utmCampaign || 'organic',
 			submittedAt: new Date().toISOString(),
 			// Merge URL params
@@ -132,12 +157,14 @@ export const POST: RequestHandler = async ({ request }) => {
 		// Submit to TrueForm CRM
 		const trueFormResponse = await submitToTrueForm(trueFormPayload);
 		
-		// Log successful submission (remove in production)
-		console.log('Lead successfully submitted to TrueForm:', {
-			leadId: trueFormResponse.project?.id,
-			email: leadData.email,
-			company: leadData.companyName
-		});
+		// Log successful submission only in development
+		if (import.meta.env.DEV) {
+			console.log('Lead successfully submitted to TrueForm:', {
+				leadId: trueFormResponse.project?.id,
+				email: leadData.email,
+				company: leadData.companyName
+			});
+		}
 		
 		return json({
 			success: true,
@@ -146,7 +173,10 @@ export const POST: RequestHandler = async ({ request }) => {
 		});
 		
 	} catch (err) {
-		console.error('Lead submission error:', err);
+		// Log errors only in development
+		if (import.meta.env.DEV) {
+			console.error('Lead submission error:', err);
+		}
 		
 		// Return generic error to client
 		return json(

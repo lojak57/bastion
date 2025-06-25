@@ -16,17 +16,16 @@ function Navigation($$payload, $$props) {
       href: "/solo-biz-helper",
       special: true
     },
-    { label: "Case Stories", href: "/case-stories" },
     { label: "About", href: "/about" }
   ];
   currentPath = store_get($$store_subs ??= {}, "$page", page).url.pathname;
   const each_array = ensure_array_like(navItems);
-  $$payload.out += `<nav class="bg-white/95 backdrop-blur-sm border-b border-gray-200 sticky top-0 z-50"><div class="max-w-7xl mx-auto px-4 sm:px-6"><div class="flex justify-between items-center h-14 sm:h-16"><a href="/" class="flex items-center group"><img src="/images/logo/weknowco-full-logo.png" alt="weKnowCO - Colorado Digital Marketing" class="h-8 sm:h-10 w-auto hover:scale-105 transition-transform duration-200"/></a> <div class="hidden md:flex items-center space-x-8"><!--[-->`;
+  $$payload.out += `<nav class="bg-white/95 backdrop-blur-sm border-b border-gray-200 sticky top-0 z-50"><div class="max-w-7xl mx-auto px-4 sm:px-6"><div class="flex justify-between items-center h-14 sm:h-16"><div class="flex items-center"><img src="/favicon.png" alt="" class="w-10 h-10 lg:w-12 lg:h-12 opacity-80 hover:opacity-100 transition-opacity duration-200"/></div> <div class="hidden md:flex items-center space-x-8"><!--[-->`;
   for (let $$index = 0, $$length = each_array.length; $$index < $$length; $$index++) {
     let item = each_array[$$index];
     $$payload.out += `<a${attr("href", item.href)}${attr_class(`text-granite-gray-600 hover:text-skyline-blue-600 transition-colors font-medium ${stringify(currentPath === item.href ? "text-skyline-blue-600 font-semibold" : "")} ${stringify(item.special ? "text-red-rocks-rust hover:text-red-rocks-rust/80" : "")}`)}>${escape_html(item.label)}</a>`;
   }
-  $$payload.out += `<!--]--></div> <div class="hidden md:flex items-center space-x-3 lg:space-x-4"><img src="/favicon.png" alt="" class="w-10 h-10 lg:w-12 lg:h-12 opacity-80 hover:opacity-100 transition-opacity duration-200"/> <a href="/contact" class="bg-skyline-blue-600 text-white px-4 py-2 lg:px-6 lg:py-2 rounded-lg hover:bg-skyline-blue-700 transition-colors font-semibold text-sm lg:text-base">Start Your Climb</a></div> <button class="md:hidden p-1.5 sm:p-2" aria-label="Toggle menu"><svg class="w-5 h-5 sm:w-6 sm:h-6 text-granite-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">`;
+  $$payload.out += `<!--]--></div> <div class="hidden md:flex items-center"><a href="/contact" class="bg-skyline-blue-600 text-white px-4 py-2 lg:px-6 lg:py-2 rounded-lg hover:bg-skyline-blue-700 transition-colors font-semibold text-sm lg:text-base">Start Your Climb</a></div> <button class="md:hidden p-1.5 sm:p-2" aria-label="Toggle menu"><svg class="w-5 h-5 sm:w-6 sm:h-6 text-granite-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">`;
   {
     $$payload.out += "<!--[!-->";
     $$payload.out += `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>`;

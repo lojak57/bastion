@@ -1,0 +1,26 @@
+/* Minimal form styles - use with Tailwind */
+.form-field {
+  @apply space-y-1;
+}
+
+.form-grid {
+  @apply grid gap-6 md:grid-cols-2;
+}
+
+.form-actions {
+  @apply flex gap-4 justify-end mt-8;
+}
+
+/* Radio/Checkbox groups */
+.choice-group {
+  @apply space-y-2;
+}
+
+.choice-item {
+  @apply flex items-center gap-3 p-3 border-2 rounded-lg cursor-pointer
+         hover:border-skyline-blue-500 transition-colors;
+}
+
+.choice-item.selected {
+  @apply border-skyline-blue-500 bg-skyline-blue-50;
+}

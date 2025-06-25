@@ -3,6 +3,7 @@
 	import { BaseCard } from '$lib/components/ui';
 	import LeadCaptureWizard from '$lib/components/wizard/LeadCaptureWizard.svelte';
 	import { page } from '$app/stores';
+	import { SITE_CONFIG } from '$lib/config/site.config';
 	
 	// Get query parameters
 	$: plan = $page.url.searchParams.get('plan');
@@ -66,8 +67,8 @@
 							<div>
 								<h4 class="font-semibold text-granite-gray-700 mb-1">Email</h4>
 								<p class="text-granite-gray-600 text-sm mb-2">For detailed project discussions</p>
-								<a href="mailto:hello@weknowco.com" class="text-skyline-blue-600 hover:text-skyline-blue-700 font-medium">
-									hello@weknowco.com
+								<a href="mailto:{SITE_CONFIG.email}" class="text-skyline-blue-600 hover:text-skyline-blue-700 font-medium">
+									{SITE_CONFIG.email}
 								</a>
 							</div>
 						</div>
@@ -83,7 +84,7 @@
 								<h4 class="font-semibold text-granite-gray-700 mb-1">Phone</h4>
 								<p class="text-granite-gray-600 text-sm mb-2">Quick questions & urgent needs</p>
 								<a href="tel:+1-720-555-5280" class="text-skyline-blue-600 hover:text-skyline-blue-700 font-medium">
-									(720) 555-5280
+									{SITE_CONFIG.phone}
 								</a>
 							</div>
 						</div>
@@ -98,7 +99,7 @@
 							<div>
 								<h4 class="font-semibold text-granite-gray-700 mb-1">Discovery Call</h4>
 								<p class="text-granite-gray-600 text-sm mb-2">30-minute strategy session</p>
-								<a href="https://calendly.com/weknowco/discovery" target="_blank" rel="noopener noreferrer" class="text-skyline-blue-600 hover:text-skyline-blue-700 font-medium">
+								<a href="{SITE_CONFIG.calendlyUrl}" target="_blank" rel="noopener noreferrer" class="text-skyline-blue-600 hover:text-skyline-blue-700 font-medium">
 									Schedule on Calendly
 									<svg class="inline w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
