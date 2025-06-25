@@ -78,16 +78,24 @@
 		return Object.keys(errors).length === 0;
 	}
 	
+	// Check if current step is valid without setting errors
+	$: currentStepValid = (() => {
+		const tempErrors = validateForm(formData, stepValidation[currentStep]);
+		return Object.keys(tempErrors).length === 0;
+	})();
+	
 	// Navigation handlers
 	function handleNext() {
 		if (validateStep(currentStep)) {
 			currentStep++;
+			errors = {}; // Clear errors when moving forward
 		}
 	}
 	
 	function handleBack() {
 		if (currentStep > 0) {
 			currentStep--;
+			errors = {}; // Clear errors when going back
 		}
 	}
 	
@@ -140,20 +148,19 @@
 	}
 </script>
 
-<WizardContainer>
-	<WizardStep
-		title="{currentStep + 1} of {totalSteps}"
-		current={currentStep}
-		total={totalSteps}
-		onNext={handleNext}
-		onBack={handleBack}
-		onSubmit={handleSubmit}
-		{loading}
-		nextDisabled={false}
-		backDisabled={currentStep === 0}
-		submitDisabled={false}
-		isLastStep={currentStep === totalSteps - 1}
-	>
+<WizardContainer
+	currentStep={currentStep}
+	totalSteps={totalSteps}
+	title="Start Your Climb"
+	subtitle="{formName}"
+	canGoBack={currentStep > 0}
+	canGoNext={currentStepValid}
+	isLastStep={currentStep === totalSteps - 1}
+	{loading}
+	on:next={handleNext}
+	on:back={handleBack}
+	on:submit={handleSubmit}
+>
 		{#if currentStep === 0}
 			<BasicInfoStep
 				bind:formData
@@ -179,5 +186,4 @@
 				on:change={handleStepChange}
 			/>
 		{/if}
-	</WizardStep>
 </WizardContainer>
