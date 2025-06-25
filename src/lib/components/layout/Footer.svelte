@@ -9,7 +9,6 @@
 		],
 		company: [
 			{ label: 'About', href: '/about' },
-			{ label: 'Case Stories', href: '/case-stories' },
 			{ label: 'Contact', href: '/contact' }
 		],
 		legal: [
