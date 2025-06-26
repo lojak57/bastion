@@ -13,57 +13,57 @@
 @tailwind components;
 @tailwind utilities;
 
-/* weKnowCO Brand CSS Variables */
+/* Bastion Brand CSS Variables */
 :root {
   /* Brand Colors */
-  --wkc-skyline-blue: #1C4D72;
-  --wkc-aspen-gold: #FDBA31;
-  --wkc-granite-gray: #3C3C3C;
-  --wkc-snowfield-white: #F9F9F9;
-  --wkc-red-rocks-rust: #B64926;
+  --bastion-black: #000000;
+  --fortress-gray: #171717;
+  --stone-gray: #737373;
+  --off-white: #fafafa;
+  --steel-blue: #0284c7;
   
   /* Typography */
-  --wkc-font-display: 'Space Grotesk', sans-serif;
-  --wkc-font-body: 'Inter', sans-serif;
-  --wkc-font-mono: 'IBM Plex Mono', monospace;
+  --bastion-font-display: 'Space Grotesk', sans-serif;
+  --bastion-font-body: 'Space Grotesk', sans-serif;
+  --bastion-font-mono: 'IBM Plex Mono', monospace;
 }
 
 /* Base Styles */
 html {
-  font-family: var(--wkc-font-body);
+  font-family: var(--bastion-font-body);
   line-height: 1.6;
-  color: var(--wkc-granite-gray);
-  background-color: var(--wkc-snowfield-white);
+  color: var(--off-white);
+  background-color: var(--bastion-black);
 }
 
 /* Brand Typography Classes */
-.wkc-heading {
-  font-family: var(--wkc-font-display);
-  font-weight: 600;
-  color: var(--wkc-skyline-blue);
+.bastion-heading {
+  font-family: var(--bastion-font-display);
+  font-weight: 700;
+  color: var(--off-white);
   line-height: 1.2;
 }
 
-.wkc-body {
-  font-family: var(--wkc-font-body);
-  color: var(--wkc-granite-gray);
+.bastion-body {
+  font-family: var(--bastion-font-body);
+  color: var(--off-white);
 }
 
-.wkc-accent {
-  color: var(--wkc-aspen-gold);
+.bastion-accent {
+  color: var(--steel-blue);
 }
 
 /* Custom Utilities */
-.altitude-shadow {
-  box-shadow: 0 4px 20px -2px rgba(28, 77, 114, 0.15);
+.brutalist-shadow {
+  box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 1);
 }
 
-.mountain-gradient {
-  background: linear-gradient(135deg, var(--wkc-skyline-blue) 0%, var(--wkc-aspen-gold) 100%);
+.brutalist-shadow-sm {
+  box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 1);
 }
 
-.hero-gradient {
-  background: linear-gradient(135deg, #1C4D72 0%, #2563eb 50%, #FDBA31 100%);
+.bastion-gradient {
+  background: linear-gradient(135deg, var(--bastion-black) 0%, var(--fortress-gray) 100%);
 }
 
 /* Animation Classes */
@@ -86,20 +86,76 @@ html {
 }
 
 /* Focus States */
-.wkc-focus:focus {
-  outline: 2px solid var(--wkc-aspen-gold);
+.bastion-focus:focus {
+  outline: 2px solid var(--steel-blue);
   outline-offset: 2px;
 }
 
 /* Button Variants */
 .btn-primary {
-  @apply bg-skyline-blue-600 text-white hover:bg-skyline-blue-700 focus:ring-2 focus:ring-skyline-blue-500 focus:ring-offset-2;
+  @apply bg-steel-blue-600 text-off-white hover:bg-steel-blue-700 focus:ring-2 focus:ring-steel-blue-500 focus:ring-offset-2;
 }
 
 .btn-secondary {
-  @apply bg-aspen-gold-400 text-granite-gray-700 hover:bg-aspen-gold-500 focus:ring-2 focus:ring-aspen-gold-400 focus:ring-offset-2;
+  @apply bg-off-white text-bastion-black hover:bg-stone-gray-200 focus:ring-2 focus:ring-stone-gray-400 focus:ring-offset-2;
 }
 
 .btn-outline {
-  @apply border-2 border-skyline-blue-600 text-skyline-blue-600 hover:bg-skyline-blue-600 hover:text-white focus:ring-2 focus:ring-skyline-blue-500 focus:ring-offset-2;
+  @apply border-2 border-off-white text-off-white hover:bg-off-white hover:text-bastion-black focus:ring-2 focus:ring-off-white focus:ring-offset-2;
+}
+
+/* Retro CTA Styles */
+.cta-yellow {
+  background-color: #FFFF00;
+  color: #000000;
+  border: 4px solid #000000;
+  box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 1);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 150ms ease;
+}
+
+.cta-yellow:hover {
+  background-color: #E6E600;
+  transform: translateY(-2px);
+  box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 1);
+}
+
+.cta-green {
+  background-color: #00FF00;
+  color: #000000;
+  border: 4px solid #000000;
+  box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 1);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 150ms ease;
+}
+
+.cta-green:hover {
+  background-color: #00E600;
+  transform: translateY(-2px);
+  box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 1);
+}
+
+/* Floating CTA Animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.cta-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Pulse Animation for CTAs */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.cta-pulse {
+  animation: pulse 2s ease-in-out infinite;
 }

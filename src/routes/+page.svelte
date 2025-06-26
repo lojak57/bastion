@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { HeroSection, Why5280Section } from '$lib/components/homepage';
+	import { HeroSection, CoreOfferSection, WhyBastionSection, PortalPreviewSection, TestimonialsSection, CTASection } from '$lib/components/bastion';
 	import { onMount } from 'svelte';
 	import { lazyImport } from '$lib/utils/lazyLoad';
 
@@ -7,10 +7,11 @@
 	let visibleSections = new Set<string>();
 
 	const sectionLoaders = {
-		plans: () => lazyImport(() => import('$lib/components/homepage/PlansSnapshotSection.svelte')),
-		founder: () => lazyImport(() => import('$lib/components/homepage/FounderStorySection.svelte')),
-		soloBiz: () => lazyImport(() => import('$lib/components/homepage/SoloBizTeaserSection.svelte')),
-		finalCTA: () => lazyImport(() => import('$lib/components/homepage/FinalCTASection.svelte'))
+		coreOffer: () => lazyImport(() => import('$lib/components/bastion/CoreOfferSection.svelte')),
+		whyBastion: () => lazyImport(() => import('$lib/components/bastion/WhyBastionSection.svelte')),
+		portalPreview: () => lazyImport(() => import('$lib/components/bastion/PortalPreviewSection.svelte')),
+		testimonials: () => lazyImport(() => import('$lib/components/bastion/TestimonialsSection.svelte')),
+		cta: () => lazyImport(() => import('$lib/components/bastion/CTASection.svelte'))
 	};
 
 	onMount(() => {
@@ -45,47 +46,54 @@
 </script>
 
 <svelte:head>
-	<title>weKnowCO | Turn Colorado Dreams Into Mile-High Brands</title>
-	<meta name="description" content="$5,280 gets you a complete website that works. 30 days. 7 pages. Zero fluff. Colorado's premier marketing partner for businesses that punch above altitude." />
-	<meta property="og:title" content="weKnowCO | Turn Colorado Dreams Into Mile-High Brands" />
-	<meta property="og:description" content="$5,280 gets you a complete website that works. 30 days. 7 pages. Zero fluff." />
+	<title>Bastion | Build Your Stronghold</title>
+	<meta name="description" content="You don't need a cofounder. You need forward motion. $5K–$7.5K scoped MVPs. $1.5K/month CTO-as-a-Service. Fast. Real. Yours." />
+	<meta property="og:title" content="Bastion | Build Your Stronghold" />
+	<meta property="og:description" content="MVPs that don't suck and partners like a CTO when you're ready. Launch before the pitch." />
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://weknowco.com" />
+	<meta property="og:url" content="https://bastion.build" />
 	<meta name="twitter:card" content="summary_large_image" />
 </svelte:head>
 
 <HeroSection />
-<Why5280Section />
 
 <!-- Lazy loaded sections with fade-in animation -->
-<div data-section="plans" class="min-h-[50px]">
-	{#if visibleSections.has('plans') && loadedSections.plans}
+<div data-section="coreOffer" class="min-h-[50px]">
+	{#if visibleSections.has('coreOffer') && loadedSections.coreOffer}
 		<div class="animate-fade-in">
-			<svelte:component this={loadedSections.plans} />
+			<svelte:component this={loadedSections.coreOffer} />
 		</div>
 	{/if}
 </div>
 
-<div data-section="founder" class="min-h-[50px]">
-	{#if visibleSections.has('founder') && loadedSections.founder}
+<div data-section="whyBastion" class="min-h-[50px]">
+	{#if visibleSections.has('whyBastion') && loadedSections.whyBastion}
 		<div class="animate-fade-in">
-			<svelte:component this={loadedSections.founder} />
+			<svelte:component this={loadedSections.whyBastion} />
 		</div>
 	{/if}
 </div>
 
-<div data-section="soloBiz" class="min-h-[50px]">
-	{#if visibleSections.has('soloBiz') && loadedSections.soloBiz}
+<div data-section="portalPreview" class="min-h-[50px]">
+	{#if visibleSections.has('portalPreview') && loadedSections.portalPreview}
 		<div class="animate-fade-in">
-			<svelte:component this={loadedSections.soloBiz} />
+			<svelte:component this={loadedSections.portalPreview} />
 		</div>
 	{/if}
 </div>
 
-<div data-section="finalCTA" class="min-h-[50px]">
-	{#if visibleSections.has('finalCTA') && loadedSections.finalCTA}
+<div data-section="testimonials" class="min-h-[50px]">
+	{#if visibleSections.has('testimonials') && loadedSections.testimonials}
 		<div class="animate-fade-in">
-			<svelte:component this={loadedSections.finalCTA} />
+			<svelte:component this={loadedSections.testimonials} />
+		</div>
+	{/if}
+</div>
+
+<div data-section="cta" class="min-h-[50px]">
+	{#if visibleSections.has('cta') && loadedSections.cta}
+		<div class="animate-fade-in">
+			<svelte:component this={loadedSections.cta} />
 		</div>
 	{/if}
 </div>

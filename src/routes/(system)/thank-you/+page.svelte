@@ -1,110 +1,79 @@
 <script lang="ts">
-	import { BaseCard, BaseButton } from '$lib/components/ui';
+	import { SITE_CONFIG } from '$lib/config/site.config';
+	import BaseButton from '$lib/components/ui/BaseButton.svelte';
 </script>
 
 <svelte:head>
-	<title>Thank You | weKnowCO</title>
-	<meta name="description" content="Thanks for reaching out! We'll be in touch within 24 hours to start planning your climb." />
+	<title>Thank You | {SITE_CONFIG.name}</title>
+	<meta name="description" content="We're reviewing your submission now. Expect a response within 24 hours." />
 	<meta name="robots" content="noindex" />
 </svelte:head>
 
-<div class="min-h-screen bg-snowfield-white flex items-center justify-center py-12">
+<div class="min-h-screen bg-bastion-black text-off-white flex items-center justify-center py-12">
 	<div class="max-w-2xl mx-auto px-6 text-center">
-		<BaseCard class="p-12">
+		<div class="bg-fortress-gray-900 border-4 border-off-white p-12 shadow-brutalist">
 			<!-- Success Icon -->
-			<div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-				<svg class="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+			<div class="w-20 h-20 bg-steel-blue-600 flex items-center justify-center mx-auto mb-6 shadow-brutalist-sm">
+				<svg class="w-10 h-10 text-off-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
 				</svg>
 			</div>
 			
 			<!-- Main Message -->
-			<h1 class="wkc-heading text-3xl md:text-4xl font-bold text-skyline-blue-600 mb-4">
-				Thanks for Reaching Out!
+			<h1 class="text-3xl md:text-4xl font-bold font-display mb-4">
+				Submission Received
 			</h1>
 			
-			<p class="text-lg text-granite-gray-600 mb-8">
-				We've received your message and are excited to help turn your Colorado dream into a mile-high brand. 
-				We'll be in touch within 24 hours to start planning your climb.
+			<p class="text-lg text-stone-gray-300 mb-8">
+				We're reviewing your submission now.
 			</p>
 			
 			<!-- What's Next */
-			<div class="bg-skyline-blue-50 rounded-lg p-6 mb-8 text-left">
-				<h2 class="wkc-heading text-lg font-semibold text-skyline-blue-600 mb-4">
-					What happens next:
+			<div class="bg-fortress-gray-800 border border-fortress-gray-700 p-6 mb-8 text-left">
+				<h2 class="text-lg font-semibold mb-4">
+					What happens next?
 				</h2>
-				<ul class="space-y-3 text-granite-gray-600">
+				<ul class="space-y-3 text-stone-gray-300">
 					<li class="flex items-start">
-						<span class="bg-skyline-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-semibold mr-3 mt-0.5">1</span>
-						We'll review your project details and goals
+						<span class="text-steel-blue-400 mr-3 text-xl">1.</span>
+						We'll review your project details and prepare a custom scope & pricing
 					</li>
 					<li class="flex items-start">
-						<span class="bg-skyline-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-semibold mr-3 mt-0.5">2</span>
-						Schedule a 30-minute discovery call to discuss your vision
+						<span class="text-steel-blue-400 mr-3 text-xl">2.</span>
+						Expect a response within 24 hours with a detailed project breakdown
 					</li>
 					<li class="flex items-start">
-						<span class="bg-skyline-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-semibold mr-3 mt-0.5">3</span>
-						Provide a custom proposal tailored to your needs
+						<span class="text-steel-blue-400 mr-3 text-xl">3.</span>
+						You'll get access to a read-only client portal preview
 					</li>
 					<li class="flex items-start">
-						<span class="bg-skyline-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-semibold mr-3 mt-0.5">4</span>
-						Start building your mile-high brand!
+						<span class="text-steel-blue-400 mr-3 text-xl">4.</span>
+						If you requested a call, we'll include scheduling options
 					</li>
 				</ul>
 			</div>
 			
-			<!-- Lead Magnet (Optional) -->
-			<div class="bg-aspen-gold-50 rounded-lg p-6 mb-8">
-				<h3 class="wkc-heading text-lg font-semibold text-granite-gray-700 mb-2">
-					While you wait...
-				</h3>
-				<p class="text-granite-gray-600 mb-4">
-					Download our free Colorado Marketing Checklist to start optimizing your business for local success.
-				</p>
-				<BaseButton 
-					variant="secondary" 
-					href="/downloads/colorado-marketing-checklist.pdf" 
-					target="_blank"
-					class="bg-aspen-gold-400 text-granite-gray-700 hover:bg-aspen-gold-500"
-				>
-					Download Free Checklist
-					<svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-					</svg>
-				</BaseButton>
-			</div>
-			
 			<!-- Quick Contact Info -->
-			<div class="text-sm text-granite-gray-500 mb-8">
-				<p>Questions in the meantime? Reach us at:</p>
+			<div class="text-sm text-stone-gray-500 mb-8">
+				<p>Questions in the meantime? Email us at:</p>
 				<p>
-					<a href="mailto:hello@weknowco.com" class="text-skyline-blue-600 hover:text-skyline-blue-700">
-						hello@weknowco.com
-					</a> • 
-					<a href="tel:+1-720-555-5280" class="text-skyline-blue-600 hover:text-skyline-blue-700">
-						(720) 555-5280
+					<a href="mailto:{SITE_CONFIG.email}" class="text-steel-blue-400 hover:text-steel-blue-300">
+						{SITE_CONFIG.email}
 					</a>
 				</p>
 			</div>
 			
 			<!-- Navigation Links -->
-			<div class="flex flex-col sm:flex-row gap-4 justify-center">
+			<div class="space-y-4">
 				<BaseButton 
-					variant="outline" 
 					href="/"
-					class="btn-outline"
+					size="lg"
+					class="bg-off-white text-bastion-black hover:bg-stone-gray-200 font-bold shadow-brutalist-sm w-full"
 				>
 					Back to Home
 				</BaseButton>
-				<BaseButton 
-					variant="outline" 
-					href="/case-stories"
-					class="btn-outline"
-				>
-					View Our Work
-				</BaseButton>
 			</div>
-		</BaseCard>
+		</div>
 	</div>
 </div>
 

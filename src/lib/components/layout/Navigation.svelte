@@ -1,29 +1,28 @@
 <script lang="ts">
 	import { page } from '$app/stores';
+	import CTAButton from '$lib/components/ui/CTAButton.svelte';
 	
 	let mobileMenuOpen = false;
 	
 	const navItems = [
 		{ label: 'Home', href: '/' },
-		{ label: '$5,280 Site', href: '/5280-site' },
-		{ label: 'Plans & Growth', href: '/plans-growth' },
-		{ label: 'Solo Biz Helper', href: '/solo-biz-helper', special: true },
+		{ label: 'How It Works', href: '/how-it-works' },
+		{ label: 'Pricing', href: '/pricing' },
+		{ label: 'Portal', href: '/portal' },
 		{ label: 'About', href: '/about' }
 	];
 	
 	$: currentPath = $page.url.pathname;
 </script>
 
-<nav class="bg-white/95 backdrop-blur-sm border-b border-gray-200 sticky top-0 z-50">
+<nav class="bg-bastion-black border-b-2 border-off-white sticky top-0 z-50">
 	<div class="max-w-7xl mx-auto px-4 sm:px-6">
 		<div class="flex justify-between items-center h-14 sm:h-16">
-			<!-- Favicon (moved from right side) -->
+			<!-- Logo -->
 			<div class="flex items-center">
-				<img 
-					src="/favicon.png" 
-					alt="" 
-					class="w-10 h-10 lg:w-12 lg:h-12 opacity-80 hover:opacity-100 transition-opacity duration-200"
-				/>
+				<a href="/" class="text-2xl font-bold font-display text-off-white">
+					BASTION
+				</a>
 			</div>
 			
 			<!-- Desktop Navigation -->
@@ -31,7 +30,7 @@
 				{#each navItems as item}
 					<a 
 						href={item.href}
-						class="text-granite-gray-600 hover:text-skyline-blue-600 transition-colors font-medium {currentPath === item.href ? 'text-skyline-blue-600 font-semibold' : ''} {item.special ? 'text-red-rocks-rust hover:text-red-rocks-rust/80' : ''}"
+						class="text-stone-gray-300 hover:text-off-white transition-colors font-medium font-display {currentPath === item.href ? 'text-off-white' : ''}"
 					>
 						{item.label}
 					</a>
@@ -40,12 +39,13 @@
 			
 			<!-- CTA Button -->
 			<div class="hidden md:flex items-center">
-				<a 
-					href="/contact"
-					class="bg-skyline-blue-600 text-white px-4 py-2 lg:px-6 lg:py-2 rounded-lg hover:bg-skyline-blue-700 transition-colors font-semibold text-sm lg:text-base"
+				<CTAButton 
+					href="/build"
+					size="md"
+					variant="yellow"
 				>
-					Start Your Climb
-				</a>
+					Scope My Build →
+				</CTAButton>
 			</div>
 			
 			<!-- Mobile Menu Button -->
@@ -54,7 +54,7 @@
 				on:click={() => mobileMenuOpen = !mobileMenuOpen}
 				aria-label="Toggle menu"
 			>
-				<svg class="w-5 h-5 sm:w-6 sm:h-6 text-granite-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+				<svg class="w-5 h-5 sm:w-6 sm:h-6 text-off-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 					{#if mobileMenuOpen}
 						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
 					{:else}
@@ -66,29 +66,27 @@
 		
 		<!-- Mobile Navigation -->
 		{#if mobileMenuOpen}
-			<div class="md:hidden border-t border-gray-200 py-3 sm:py-4">
-				<!-- Logo in mobile menu -->
-				<div class="flex justify-center mb-4 sm:mb-6">
-					<img src="/images/logo/weknowco-icon.svg" alt="" class="w-12 h-12 sm:w-16 sm:h-16 opacity-20" />
-				</div>
+			<div class="md:hidden border-t-2 border-off-white py-3 sm:py-4">
 				<div class="flex flex-col space-y-3 sm:space-y-4">
 					{#each navItems as item}
 						<a 
 							href={item.href}
-							class="text-granite-gray-600 hover:text-skyline-blue-600 transition-colors font-medium flex items-center {currentPath === item.href ? 'text-skyline-blue-600 font-semibold' : ''} {item.special ? 'text-red-rocks-rust hover:text-red-rocks-rust/80' : ''}"
+							class="text-stone-gray-300 hover:text-off-white transition-colors font-medium flex items-center {currentPath === item.href ? 'text-off-white font-bold' : ''}"
 							on:click={() => mobileMenuOpen = false}
 						>
-							<span class="w-1 h-1 bg-aspen-gold-400 rounded-full mr-3"></span>
+							<span class="w-2 h-2 bg-steel-blue-400 mr-3"></span>
 							{item.label}
 						</a>
 					{/each}
-					<a 
-						href="/contact"
-						class="bg-skyline-blue-600 text-white px-6 py-3 rounded-lg hover:bg-skyline-blue-700 transition-colors font-semibold text-center mt-3 sm:mt-4"
-						on:click={() => mobileMenuOpen = false}
+					<CTAButton 
+						href="/build"
+						size="lg"
+						variant="yellow"
+						fullWidth={true}
+						onClick={() => mobileMenuOpen = false}
 					>
-						Start Your Climb
-					</a>
+						Scope My Build →
+					</CTAButton>
 				</div>
 			</div>
 		{/if}

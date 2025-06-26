@@ -5,54 +5,58 @@
 
 export const SITE_CONFIG = {
   // Basic Info
-  name: "weKnowCO",
-  tagline: "Turn Colorado Dreams Into Mile-High Brands",
-  domain: "weknowco.com",
+  name: "Bastion",
+  tagline: "Build Your Stronghold",
+  domain: "bastion.build",
   
   // Contact Info
-  email: "hello@weknowco.com",
-  phone: "(720) 555-5280",
-  calendlyUrl: "https://calendly.com/weknowco/discovery",
+  email: "build@bastion.build",
+  phone: "(555) 123-4567",
+  calendlyUrl: "https://calendly.com/bastion/discovery",
   
   // Branding
   logo: {
-    full: "/images/logo/weknowco-full-logo.png",
-    icon: "/images/logo/weknowco-icon.svg",
+    full: "/images/logo/bastion-full-logo.png",
+    icon: "/images/logo/bastion-icon.svg",
   },
   
-  // Pricing (make it memorable!)
-  heroPrice: "$5,280", // Denver's elevation
-  priceValue: 5280,
-  pricingHook: "5,280 feet. 5,280 dollars. Elevated marketing at altitude.",
+  // Pricing
+  mvpPrice: "$5K–$7.5K",
+  mvpPriceRange: { min: 5000, max: 7500 },
+  ctoAdvisoryPrice: "$1.5K/month",
+  ctoAdvisoryValue: 1500,
+  ctoFullPrice: "$3K/month",
+  ctoFullValue: 3000,
+  pricingHook: "You don't need a cofounder. You need forward motion.",
   
   // Location/Theme
   location: {
-    city: "Denver",
-    state: "Colorado",
-    region: "Mile-High",
-    timezone: "America/Denver",
+    city: "Remote",
+    state: "Worldwide",
+    region: "Digital",
+    timezone: "UTC",
   },
   
-  // Brand Colors (update in tailwind.config.js too)
+  // Brand Colors (brutalist black/white theme)
   colorNames: {
-    primary: "skyline-blue",
-    secondary: "aspen-gold",
-    neutral: "granite-gray",
-    light: "snowfield-white",
-    accent: "red-rocks-rust",
+    primary: "bastion-black",
+    secondary: "fortress-gray",
+    neutral: "stone-gray",
+    light: "off-white",
+    accent: "steel-blue",
   },
   
   // Social Links
   social: {
-    twitter: "https://twitter.com/weknowco",
-    linkedin: "https://linkedin.com/company/weknowco",
-    instagram: "https://instagram.com/weknowco",
+    twitter: "https://twitter.com/bastionbuild",
+    linkedin: "https://linkedin.com/company/bastion",
+    github: "https://github.com/bastion",
   },
   
   // API Configuration
   api: {
     leadEndpoint: "/api/leads", // TrueForm will route based on whiteLabelId
-    whiteLabelId: "weknowco",
+    whiteLabelId: "bastion",
   },
   
   // Feature Flags
@@ -60,6 +64,7 @@ export const SITE_CONFIG = {
     showTestimonials: true,
     showBlog: false,
     showCaseStudies: false,
+    showPortal: true,
   }
 };
 
@@ -73,7 +78,7 @@ export function getFullUrl(path = ""): string {
 export function getSiteMetaTags() {
   return {
     title: `${SITE_CONFIG.name} | ${SITE_CONFIG.tagline}`,
-    description: `${SITE_CONFIG.heroPrice} gets you a complete website that works. 30 days. 7 pages. Zero fluff.`,
+    description: `${SITE_CONFIG.pricingHook} Fast. Real. Yours. MVPs that don't suck.`,
     url: getFullUrl(),
     image: getFullUrl(SITE_CONFIG.logo.full),
   };

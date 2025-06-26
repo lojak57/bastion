@@ -1,6 +1,6 @@
 {
-  "name": "weknowco",
-  "version": "0.0.1",
+  "name": "bastion",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "build": "vite build",

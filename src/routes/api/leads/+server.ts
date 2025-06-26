@@ -30,6 +30,18 @@ interface LeadFormData {
 	utmCampaign?: string;
 	adGroup?: string;
 	keyword?: string;
+	// Bastion Build Wizard fields
+	idea?: string;
+	problem?: string;
+	urgency?: string;
+	budget?: string;
+	techLevel?: string;
+	specificStack?: string;
+	success?: string;
+	wantsCall?: boolean;
+	wantsQuoteFirst?: boolean;
+	deck?: any;
+	tags?: string[];
 }
 
 interface ExtractedUrlParams {
@@ -116,7 +128,10 @@ function determineLeadTags(leadData: LeadFormData): string[] {
 	tags.push(`site:${SITE_CONFIG.api.whiteLabelId}`);
 	
 	// Form type tags
-	if (leadData.formType === 'partnership') {
+	if (leadData.formType === 'bastion-build-wizard') {
+		tags.push('form:build-wizard');
+		tags.push('interest:mvp-build');
+	} else if (leadData.formType === 'partnership') {
 		tags.push('form:solo-biz-helper');
 		tags.push('interest:partnership');
 	} else if (leadData.formName?.toLowerCase().includes('lead capture')) {
@@ -130,7 +145,20 @@ function determineLeadTags(leadData: LeadFormData): string[] {
 	}
 	
 	// Budget tier tags
-	if (leadData.monthlyBudget) {
+	if (leadData.budget) {
+		// Bastion Build Wizard budget format
+		const budget = leadData.budget.toLowerCase();
+		if (budget.includes('15k+')) {
+			tags.push('budget:enterprise');
+		} else if (budget.includes('7.5-15k')) {
+			tags.push('budget:premium');
+		} else if (budget.includes('5-7.5k')) {
+			tags.push('budget:growth');
+		} else if (budget.includes('<5k')) {
+			tags.push('budget:starter');
+		}
+	} else if (leadData.monthlyBudget) {
+		// Legacy format
 		const budget = leadData.monthlyBudget.toLowerCase();
 		if (budget.includes('10,000') || budget.includes('10000')) {
 			tags.push('budget:enterprise');
@@ -155,7 +183,18 @@ function determineLeadTags(leadData: LeadFormData): string[] {
 	}
 	
 	// Timeline urgency tags
-	if (leadData.timeframe) {
+	if (leadData.urgency) {
+		// Bastion Build Wizard urgency format
+		const urgency = leadData.urgency.toLowerCase();
+		if (urgency === 'asap') {
+			tags.push('urgency:high');
+		} else if (urgency === '2-4weeks' || urgency === '1-2months') {
+			tags.push('urgency:medium');
+		} else {
+			tags.push('urgency:low');
+		}
+	} else if (leadData.timeframe) {
+		// Legacy format
 		const timeframe = leadData.timeframe.toLowerCase();
 		if (timeframe.includes('immediate') || timeframe.includes('asap')) {
 			tags.push('urgency:high');
@@ -164,6 +203,19 @@ function determineLeadTags(leadData: LeadFormData): string[] {
 		} else {
 			tags.push('urgency:low');
 		}
+	}
+	
+	// Tech stack tags for Bastion
+	if (leadData.techLevel) {
+		tags.push(`tech-level:${leadData.techLevel}`);
+		if (leadData.specificStack) {
+			tags.push(`tech-stack:${leadData.specificStack.toLowerCase().replace(/\s+/g, '-')}`);
+		}
+	}
+	
+	// Merge any pre-computed tags
+	if (leadData.tags && Array.isArray(leadData.tags)) {
+		tags.push(...leadData.tags);
 	}
 	
 	return tags;
@@ -260,14 +312,14 @@ export const POST: RequestHandler = async ({ request, getClientAddress }) => {
 // Optional: GET endpoint for testing
 export const GET: RequestHandler = async () => {
 	return json({
-		message: 'weKnowCO Lead Capture API',
+		message: 'Bastion Lead Capture API',
 		endpoints: {
 			POST: '/api/leads - Submit a new lead',
 		},
 		required_fields: ['firstName', 'lastName', 'email'],
 		optional_fields: [
-			'companyName', 'phone', 'serviceInterest', 'monthlyBudget',
-			'timeframe', 'currentMarketing', 'painPoints', 'goals'
+			'companyName', 'phone', 'idea', 'problem', 'urgency', 
+			'budget', 'techLevel', 'success', 'wantsCall', 'wantsQuoteFirst'
 		]
 	});
 };

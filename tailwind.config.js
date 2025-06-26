@@ -11,34 +11,21 @@ export default {
         "2xl": "1rem",
       },
       colors: {
-        // weKnowCO Brand Colors
-        'skyline-blue': {
-          50: '#f0f8ff',
-          100: '#e0f1fe',
-          200: '#bae3fd',
-          300: '#7ccefb',
-          400: '#36b6f6',
-          500: '#0c9ee7',
-          600: '#1C4D72', // Primary brand color
-          700: '#0369a1',
-          800: '#075985',
-          900: '#0c4a6e',
-          950: '#082f49',
+        // Bastion Brand Colors - Brutalist Theme
+        'bastion-black': '#000000',
+        'fortress-gray': {
+          50: '#fafafa',
+          100: '#f5f5f5',
+          200: '#e5e5e5',
+          300: '#d4d4d4',
+          400: '#a3a3a3',
+          500: '#737373',
+          600: '#525252',
+          700: '#404040',
+          800: '#262626',
+          900: '#171717',
         },
-        'aspen-gold': {
-          50: '#fffbeb',
-          100: '#fef3c7',
-          200: '#fde68a',
-          300: '#fcd34d',
-          400: '#FDBA31', // Primary brand color
-          500: '#f59e0b',
-          600: '#d97706',
-          700: '#b45309',
-          800: '#92400e',
-          900: '#78350f',
-          950: '#451a03',
-        },
-        'granite-gray': {
+        'stone-gray': {
           50: '#f8fafc',
           100: '#f1f5f9',
           200: '#e2e8f0',
@@ -46,13 +33,27 @@ export default {
           400: '#94a3b8',
           500: '#64748b',
           600: '#475569',
-          700: '#3C3C3C', // Primary brand color
+          700: '#334155',
           800: '#1e293b',
           900: '#0f172a',
-          950: '#020617',
         },
-        'snowfield-white': '#F9F9F9',
-        'red-rocks-rust': '#B64926',
+        'off-white': '#fafafa',
+        'steel-blue': {
+          50: '#f0f9ff',
+          100: '#e0f2fe',
+          200: '#bae6fd',
+          300: '#7dd3fc',
+          400: '#38bdf8',
+          500: '#0ea5e9',
+          600: '#0284c7',
+          700: '#0369a1',
+          800: '#075985',
+          900: '#0c4a6e',
+        },
+        'retro-yellow': '#FFFF00',
+        'retro-yellow-dark': '#E6E600',
+        'retro-green': '#00FF00',
+        'retro-green-dark': '#00E600',
         // Keep existing accent colors for compatibility
         accent: {
           50: "var(--accent-50)",
@@ -75,7 +76,10 @@ export default {
       },
       boxShadow: {
         soft: "0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04)",
-        'altitude': '0 4px 20px -2px rgba(28, 77, 114, 0.15)',
+        'brutalist': '8px 8px 0px 0px rgba(0, 0, 0, 1)',
+        'brutalist-sm': '4px 4px 0px 0px rgba(0, 0, 0, 1)',
+        'cta': '6px 6px 0px 0px rgba(0, 0, 0, 1)',
+        'cta-hover': '8px 8px 0px 0px rgba(0, 0, 0, 1)',
       },
     },
   },
