@@ -25,44 +25,35 @@
       <div class="bg-fortress-gray-900 border-2 border-off-white p-8 md:p-12 shadow-brutalist mb-16">
         <div class="prose prose-invert max-w-none">
           <p class="text-lg mb-6">
-            I'm Mitch. Early 30s. Founder of Bastion.
+            We are Bastion. A collective of builders, designers, and strategists.
           </p>
           
           <p class="mb-6">
-            As a kid, I was the one everyone believed in. Perfect grades. Great test scores. Sports accolades. 
-            The "gifted" kid who was going places. You know the type — maybe you were one too.
+            We've seen the typical agency model up close: bloated budgets, slow timelines, and a painful disconnect from what founders actually need. It’s a system that serves the agency, not the startup.
           </p>
           
           <p class="mb-6">
-            Then college hit, and everything fell apart. Like it does for so many late-diagnosed "child prodigies." 
-            The structure disappeared. The praise stopped. Reality set in. I crashed hard.
-          </p>
-          
-          <p class="mb-6">
-            My 20s were hell. Personal life imploded. Career scattered across industries — tech, industrial automation, 
-            retail, construction management. Jack of all trades, master of none. Classic millennial story, right?
+            Our team has been in the trenches—in tech, industrial automation, retail, and construction management. We’ve been the struggling founders, the jacks-of-all-trades, the ones learning hard lessons while navigating scattered careers.
           </p>
           
           <p class="mb-6 text-steel-blue-400 font-semibold">
-            But here's the thing about going through hell: you learn how the world actually works.
+            That experience taught us how the world actually works.
           </p>
           
           <p class="mb-6">
-            All those industries? They taught me how different businesses think. How founders dream. How ideas die. 
-            How consultants and agencies extract value. How the game is played.
+            It taught us how different businesses think. How founders dream. How ideas die. How consultants and agencies extract value. How the game is played.
           </p>
           
           <p class="mb-6">
-            I watched so many companies take advantage of founders. Charge insane prices because they smell either 
-            success (and future money) or desperation (and easy money). Either way, the founder loses.
+            We watched too many companies take advantage of founders, charging insane prices because they smell either success (and future money) or desperation (and easy money). Either way, the founder loses.
           </p>
           
           <p class="mb-6">
-            I started Bastion because I'm tired of that shit.
+            Bastion was started because we're tired of that shit.
           </p>
           
           <p class="mb-6 text-xl font-semibold">
-            I just want to make dreams come true.
+            We just want to make dreams come true.
           </p>
           
           <p class="mb-6">
@@ -71,8 +62,8 @@
           </p>
           
           <p class="text-lg font-semibold">
-            That self-awareness that comes from failing? That broad market knowledge from bouncing between industries? 
-            That's what I bring to your project. I've been the struggling founder. Now I help founders stop struggling.
+            That self-awareness from failure? That broad market knowledge from bouncing between industries? 
+            That's what we bring to your project. We've been the struggling founders. Now we help founders stop struggling.
           </p>
         </div>
       </div>
@@ -95,7 +86,7 @@
       
       <!-- Industries -->
       <div class="bg-fortress-gray-900 border-2 border-off-white p-8 mb-16 shadow-brutalist-sm">
-        <h2 class="text-2xl font-bold mb-6">Industries I've Been In (And Learned From)</h2>
+        <h2 class="text-2xl font-bold mb-6">Industries We've Been In (And Learned From)</h2>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
           <div class="text-stone-gray-400">
             <span class="text-steel-blue-400 mr-2">▪</span>Tech Startups
@@ -123,7 +114,7 @@
           </div>
         </div>
         <p class="mt-6 text-stone-gray-300">
-          Each industry taught me something. Now I use it all to build better products faster.
+          Each industry taught us something. Now we use it all to build better products faster.
         </p>
       </div>
       
@@ -133,7 +124,7 @@
         
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div class="bg-steel-blue-900 border-2 border-off-white p-6 shadow-brutalist-sm">
-            <h3 class="text-xl font-bold mb-3">What I Believe</h3>
+            <h3 class="text-xl font-bold mb-3">What We Believe</h3>
             <ul class="space-y-2 text-steel-blue-100">
               <li>• Founders should own their code</li>
               <li>• MVPs should be minimal AND viable</li>
@@ -144,7 +135,7 @@
           </div>
           
           <div class="bg-steel-blue-900 border-2 border-off-white p-6 shadow-brutalist-sm">
-            <h3 class="text-xl font-bold mb-3">What I Don't Do</h3>
+            <h3 class="text-xl font-bold mb-3">What We Don't Do</h3>
             <ul class="space-y-2 text-steel-blue-100">
               <li>• Take equity in your company</li>
               <li>• Lock you into retainers</li>

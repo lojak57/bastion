@@ -25,8 +25,8 @@ export const SITE_CONFIG = {
   mvpPriceRange: { min: 5000, max: 7500 },
   ctoAdvisoryPrice: "$1.5K/month",
   ctoAdvisoryValue: 1500,
-  ctoFullPrice: "$3K/month",
-  ctoFullValue: 3000,
+  ctoFullPrice: "$3.5K/month",
+  ctoFullValue: 3500,
   pricingHook: "You don't need a cofounder. You need forward motion.",
   
   // Location/Theme

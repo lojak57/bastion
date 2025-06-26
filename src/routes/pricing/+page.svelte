@@ -5,7 +5,7 @@
 
 <svelte:head>
   <title>Pricing | {SITE_CONFIG.name}</title>
-  <meta name="description" content="Side-by-side, brutalist, no-bullshit pricing. MVP Build: {SITE_CONFIG.mvpPrice} one-time. CTO-as-a-Service: {SITE_CONFIG.ctoPrice}." />
+  <meta name="description" content="Side-by-side, brutalist, no-bullshit pricing. MVP Build: {SITE_CONFIG.mvpPrice} one-time. CTO-as-a-Service: {SITE_CONFIG.ctoAdvisoryPrice}." />
 </svelte:head>
 
 <section class="min-h-screen bg-bastion-black text-off-white py-24">
@@ -20,7 +20,7 @@
       
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
         <!-- MVP Build Card -->
-        <div class="bg-fortress-gray-900 border-4 border-off-white p-8 shadow-brutalist">
+        <div class="bg-fortress-gray-900 border-4 border-off-white p-6 md:p-8 shadow-brutalist">
           <div class="mb-8">
             <h2 class="text-3xl font-bold mb-2">MVP Build</h2>
             <p class="text-5xl font-mono text-steel-blue-400">{SITE_CONFIG.mvpPrice}</p>
@@ -86,11 +86,11 @@
         </div>
         
         <!-- CTO Advisory Card -->
-        <div class="bg-fortress-gray-900 border-4 border-off-white p-8 shadow-brutalist">
+        <div class="bg-fortress-gray-900 border-4 border-off-white p-6 md:p-8 shadow-brutalist">
           <div class="mb-8">
             <p class="text-sm font-mono text-stone-gray-400 mb-2">LIGHT TOUCH</p>
             <h2 class="text-2xl font-bold mb-2">CTO Advisory</h2>
-            <p class="text-5xl font-mono text-steel-blue-400">$1.5K</p>
+            <p class="text-5xl font-mono text-steel-blue-400">{SITE_CONFIG.ctoAdvisoryPrice.split('/')[0]}</p>
             <p class="text-stone-gray-400">per month</p>
           </div>
           
@@ -148,7 +148,7 @@
           <div class="mb-8">
             <p class="text-sm font-mono text-steel-blue-200 mb-2">FULL INVOLVEMENT</p>
             <h2 class="text-2xl font-bold mb-2">CTO Full Service</h2>
-            <p class="text-5xl font-mono text-off-white">$3K</p>
+            <p class="text-5xl font-mono text-off-white">{SITE_CONFIG.ctoFullPrice.split('/')[0]}</p>
             <p class="text-steel-blue-300">per month</p>
           </div>
           

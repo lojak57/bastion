@@ -34,6 +34,7 @@ html {
   line-height: 1.6;
   color: var(--off-white);
   background-color: var(--bastion-black);
+  overflow-x: hidden;
 }
 
 /* Brand Typography Classes */
