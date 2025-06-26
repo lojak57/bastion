@@ -13,7 +13,7 @@
 	<div class="logo-loader-overlay">
 		<div class="logo-loader {sizeClasses}">
 			<img 
-				src="/images/logo/weknowco-icon.svg" 
+				src="/images/logo/bastion-icon.svg" 
 				alt="Loading..."
 				class="logo-spinner"
 			/>

@@ -1,5 +1,5 @@
 /**
- * weKnowCO UI Components - Barrel Export
+ * Bastion UI Components - Barrel Export
  *
  * Centralized export for all UI components.
  * Consolidated component system with single source of truth.

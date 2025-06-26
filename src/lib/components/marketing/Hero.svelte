@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { BaseButton } from '../ui';
 	
-	export let title: string = "Turn Colorado Dreams Into Mile-High Brands";
+		export let title: string = "Build Your Digital Bastion";
 	export let subtitle: string = "$5,280 gets you a complete website that works. 30 days. 7 pages. Zero fluff.";
 	export let ctaText: string = "Start Your Climb";
 	export let ctaHref: string = "/contact";

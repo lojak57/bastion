@@ -1,5 +1,5 @@
 /**
- * Error Service for weKnowCO
+ * Error Service for Bastion
  * Handles error logging and reporting for the marketing site
  */
 
